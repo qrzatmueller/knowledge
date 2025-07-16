@@ -1,0 +1,2 @@
+- **Daraus ergibt sich** insbesondere die Notwendigkeit der gegenseitigen Rücksichtnahme. 
+- 

@@ -1,0 +1,9 @@
+- Gemäß Abstimmung 2 sollen erhöhten Anforderungen gem. DIN 4109.5 bei Decken und Treppen eingehalten werden. Anforderungen sollen eingehalten werden. 
+- Mit dem o.g. Bauteilaufbau kann unter Berücksichtigung der horizontalen Übertragungsrichtung folgender Wert erzielt werden.
+- Aufbau vorzusehen
+- Zur Erschließung des .... ist ... vorgesehen. 
+- Anforderung einzuhalten 
+- Trennwände müssen im direkten Schalldurchgang einbewertetes Schalldämm-Maß von bla aufweisen. 
+- wie in Abschnitt 5.5 beschrieben- vorzusehen
+- aufweisen statt haben. 
+- an gesonderten Trageelemente zu montieren

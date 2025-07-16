@@ -1,0 +1,4 @@
+- KSS Rechner
+	- Trennbauteil
+		- Es ist eine Mehrschalige Wand, dann ist normale Masseregel nicht geeignet.
+		- 

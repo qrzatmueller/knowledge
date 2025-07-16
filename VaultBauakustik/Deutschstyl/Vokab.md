@@ -1,0 +1,3 @@
+- Klamm. Wie eine Tal aber höher Grundstücke daneben.
+- Kinderspiele Topfenschlagen und Sackhüpfen
+- gängig (üblich)?

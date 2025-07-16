@@ -1,0 +1,15 @@
+Bauliche situation: Nur was akustisch wichtig ist. Die merkmale 
+- Immer schreibt zuerst über die Mindestanforderungen und danach die Erhöhten. 
+	- Zugrunde zulegen (Satzbau)
+- Grundlagen
+	- plannung art anpassen 
+	-  Ausführungsplanung, Maßstab 1:50, abgerufen von Projektserver am 12.05.2025
+	- entweder "gesendet von bla bla am bla bla" oder "abgerufen von bla bla Projektserver am bla bla"
+	- Vorentwurfs-, Entwurfs- , Genehmigungs-, Ausführung-/Werkplann-, abhängig von Leistungsphase ab 
+- Außentreppen und auch Fahrradrampen sollen akustisch entkoppelt sein! Wenn es nur eine Rampe ist, dann kann man beispielsweise eines Plattenbelags im Splittbett oder schwimmenden Estrich anwenden, das ist aber nicht bei Treppen möglich. 
+- Balkonee können entweder eine Vorgestellte Konstruktion oder eine Auskragend(Gekoppelt) Konstruktion sein. Der erste hat eigene Spalten und soll akustisch entkoppelt sein (beide eigentilich), der andere benutzt besodere Bauelemente für die kopplung an der Geschoss bodenplatte
+- Installationsschächte und -register sind fast immer in Leichtbauweise. Auch wenn man massivbaut, wird eine Trockenwand gemacht um die installationen einzurichten. 
+- Untergeschoss hat eine oftbenutzt bau. Bodenbelag, plus esstrich, trennlage, trittshalldämmung mit s´= 30 und letzendlicht eine bodenplatte und Abdichtung und Wärmedämmung gemäß Anforderung. La vieja confiable
+- was haben wir für werte benutzt in KS rechner? 65 und 67, warum? 65 beim Innenwänden und außenwände, genommen aus teil 33, nicht genau aber zumindest so. 
+- 67 für flanken wenn man rechnet vertikalle übertragung  R'w
+- 65 für RW auch, wenn man horizontal rechnet
