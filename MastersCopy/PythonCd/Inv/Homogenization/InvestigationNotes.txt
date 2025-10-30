@@ -1,0 +1,63 @@
+ The question at the moment regarding homogenization is the following:
+ If I have a layered beam, and I predict the total loss factor using the rku,
+ will this loss factor be the same as the identified one through the vibration
+ profile??.
+
+ Until now the answer seems to be a no in terms of. the identified loss factor
+ is much greater.
+ Sources of uncertainty:
+-first identification using a composite beam, so how do we even know if we are
+identifying what its supposed to be?
+-boundary conditions are also not similar to previous, the force is acting on the
+free side
+-the created displacements are quite big wrt the thickness
+-Is the RKU implementation correct? I am getting the same values as the graph on
+the publication...
+-what are the assumptions on the RKU?? does a euler bernoulli beam have a higher
+or lower loss factor?
+-why is the result frequency dependent?? (slightly at least)
+
+ideas:
+
+-reduce the excitation to create displacements that make sense in a linear
+formulation (mmts or less of displacement) -> No effect.
+-Clean the identification code and comment it appropriately
+- if its still crazy try to model a long OLF beam and see what you identify in
+that scenario.
+- an EulerBernoulli Beam with the identified properties? how would it behave?
+But the beam behaviour also depends on the masses and moments of inertia. how
+to find the appropriate values? Better look for information online.
+-Can I manufacture a beam for real testing? or does sika have measurements or
+experience comparing the RKU with their measurements? what info is in the excel??
+
+
+Simulation Results. nu 0.49
+[7.51848731e+09 7.56296072e+09 7.59294310e+09 7.61008243e+09
+ 7.61889918e+09 7.61079551e+09 7.60330489e+09 7.58466533e+09
+ 7.56507083e+09 7.53681645e+09 7.51315157e+09 7.47458368e+09
+ 7.44891933e+09 7.40868236e+09 7.37062800e+09 7.33924667e+09
+ 7.29129977e+09 7.25095577e+09 7.21215437e+09 7.15402718e+09]
+all etas:
+[0.28806034 0.28738811 0.28717959 0.28720772 0.28660368 0.28630301
+ 0.28598971 0.28513605 0.28472979 0.28357034 0.28264272 0.28150932
+ 0.27950069 0.27842182 0.27588727 0.27335435 0.27129277 0.26742347
+ 0.26354645 0.25974894]
+
+nu 0.3
+ [6.57889120e+09 6.56338767e+09 6.54044586e+09 6.51249454e+09
+ 6.48600173e+09 6.45903048e+09 6.42433851e+09 6.39754106e+09
+ 6.36143465e+09 6.33419105e+09 6.29679321e+09 6.26996073e+09
+ 6.23335407e+09 6.20239257e+09 6.17223800e+09 6.13328520e+09
+ 6.10434500e+09 6.06701246e+09 6.02360298e+09 5.98382338e+09]
+all etas:
+[0.26706601 0.26536691 0.26360945 0.26205007 0.26056004 0.25871801
+ 0.2572555  0.25553319 0.25389299 0.25205964 0.25042061 0.24809386
+ 0.24655836 0.24381723 0.24158104 0.2392966  0.23561183 0.23301026
+ 0.22962834 0.22466808]
+
+ Conclusion on RKU. It is not a homogenization approach, but just a fast way
+ to approximate the loss factor of the composite material.
+ Since it is only taking into account the bending stresses, it misses out on
+ all the shear losses. which can be very much relevant. therefore underestimating
+ the loss factor. a better homogenization technique or another way to validate
+ my model is in order.

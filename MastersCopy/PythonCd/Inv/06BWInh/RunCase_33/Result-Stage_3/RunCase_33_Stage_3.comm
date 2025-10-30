@@ -1,0 +1,266 @@
+DEBUT(LANG='EN')
+
+
+tsth = 1 / 31
+
+ttth = 1 / 11
+
+one21th = 1 / 21
+
+mesh1D = LIRE_MAILLAGE(identifier='3:1',
+                       UNITE=20)
+
+modelEB = AFFE_MODELE(identifier='4:1',
+                      AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'),
+                              MODELISATION='POU_D_E',
+                              PHENOMENE='MECANIQUE'),
+                      MAILLAGE=mesh1D)
+
+elemproEB = AFFE_CARA_ELEM(identifier='5:1',
+                           MODELE=modelEB,
+                           POUTRE=(_F(CARA=('HY', 'HZ'),
+                                      GROUP_MA=('EBfullEdge', ),
+                                      SECTION='RECTANGLE',
+                                      VALE=(0.05, 0.001)),
+                                   _F(CARA=('HY', 'HZ'),
+                                      GROUP_MA=('InHomoSmall', ),
+                                      SECTION='RECTANGLE',
+                                      VALE=(0.05, 0.0012))))
+
+mater = DEFI_MATERIAU(identifier='6:1',
+                      ELAS=_F(AMOR_HYST=0.2,
+                              E=100000000000.0,
+                              NU=0.3,
+                              RHO=7850.0))
+
+fieldmatEB = AFFE_MATERIAU(identifier='7:1',
+                           AFFE=_F(MATER=(mater, ),
+                                   TOUT='OUI'),
+                           MAILLAGE=mesh1D,
+                           MODELE=modelEB)
+
+listFr = DEFI_LIST_REEL(identifier='8:1',
+                        VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))
+
+listFr2 = DEFI_LIST_REEL(identifier='9:1',
+                         DEBUT=20.0,
+                         INTERVALLE=_F(JUSQU_A=2000.0,
+                                       NOMBRE=100))
+
+bcEB = AFFE_CHAR_MECA(identifier='10:1',
+                      DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'),
+                                  GROUP_NO=('EBedgeEnc', )),
+                      MODELE=modelEB)
+
+load0 = AFFE_CHAR_MECA(identifier='11:1',
+                       FORCE_NODALE=_F(FZ=0.2,
+                                       GROUP_NO=('Exc45', )),
+                       MODELE=modelEB)
+
+ASSEMBLAGE(identifier='12:1',
+           CARA_ELEM=elemproEB,
+           CHAM_MATER=fieldmatEB,
+           CHARGE=(bcEB, ),
+           MATR_ASSE=(_F(MATRICE=CO('MEB'),
+                         OPTION='MASS_MECA'),
+                      _F(MATRICE=CO('KEB'),
+                         OPTION='RIGI_MECA'),
+                      _F(MATRICE=CO('KH'),
+                         OPTION='RIGI_MECA_HYST')),
+           MODELE=modelEB,
+           NUME_DDL=CO('nddl'),
+           VECT_ASSE=_F(CHARGE=(load0, ),
+                        OPTION='CHAR_MECA',
+                        VECTEUR=CO('FZEB')))
+
+resEB = DYNA_VIBRA(identifier='0:2',
+                   BASE_CALCUL='PHYS',
+                   CARA_ELEM=elemproEB,
+                   CHAM_MATER=fieldmatEB,
+                   EXCIT=_F(CHARGE=load0,
+                            COEF_MULT=1.0),
+                   LIST_FREQ=listFr,
+                   MATR_MASS=MEB,
+                   MATR_RIGI=KH,
+                   MODELE=modelEB,
+                   TYPE_CALCUL='HARM')
+
+resTable = POST_RELEVE_T(identifier='0:3',
+                         ACTION=_F(FORMAT_C='REEL',
+                                   GROUP_NO=('EBfullEdge', ),
+                                   INTITULE='ViteDZreel',
+                                   NOM_CHAM='VITE',
+                                   NOM_CMP=('DZ', ),
+                                   OPERATION=('EXTRACTION', ),
+                                   RESULTAT=resEB))
+
+node_table = POST_RELEVE_T(identifier='1:3',
+                           ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'),
+                                     INTITULE='sh',
+                                     NOM_CHAM='VITE',
+                                     NOM_CMP=('DZ', ),
+                                     NUME_ORDRE=(1, ),
+                                     OPERATION=('EXTRACTION', ),
+                                     RESULTAT=resEB))
+
+resp__3 = RECU_FONCTION(identifier='2:3',
+                        GROUP_NO=('Group_1', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp__2 = RECU_FONCTION(identifier='3:3',
+                        GROUP_NO=('Group_2', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp__1 = RECU_FONCTION(identifier='4:3',
+                        GROUP_NO=('Group_3', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_0 = RECU_FONCTION(identifier='5:3',
+                       GROUP_NO=('Group_4', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_1 = RECU_FONCTION(identifier='6:3',
+                       GROUP_NO=('Group_5', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_2 = RECU_FONCTION(identifier='7:3',
+                       GROUP_NO=('Group_6', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_3 = RECU_FONCTION(identifier='8:3',
+                       GROUP_NO=('Group_7', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_4 = RECU_FONCTION(identifier='9:3',
+                       GROUP_NO=('Group_8', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_5 = RECU_FONCTION(identifier='10:3',
+                       GROUP_NO=('Group_9', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_6 = RECU_FONCTION(identifier='11:3',
+                       GROUP_NO=('Group_10', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_7 = RECU_FONCTION(identifier='12:3',
+                       GROUP_NO=('Group_11', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_8 = RECU_FONCTION(identifier='13:3',
+                       GROUP_NO=('Group_12', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_9 = RECU_FONCTION(identifier='14:3',
+                       GROUP_NO=('Group_13', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_10 = RECU_FONCTION(identifier='15:3',
+                        GROUP_NO=('Group_14', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_11 = RECU_FONCTION(identifier='16:3',
+                        GROUP_NO=('Group_15', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_12 = RECU_FONCTION(identifier='17:3',
+                        GROUP_NO=('Group_16', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_13 = RECU_FONCTION(identifier='18:3',
+                        GROUP_NO=('Group_17', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_14 = RECU_FONCTION(identifier='19:3',
+                        GROUP_NO=('Group_18', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_15 = RECU_FONCTION(identifier='20:3',
+                        GROUP_NO=('Group_19', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_16 = RECU_FONCTION(identifier='21:3',
+                        GROUP_NO=('Group_20', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_17 = RECU_FONCTION(identifier='22:3',
+                        GROUP_NO=('Group_21', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+IMPR_FONCTION(identifier='23:3',
+              COURBE=(_F(FONCTION=resp__3),
+                      _F(FONCTION=resp__2),
+                      _F(FONCTION=resp__1),
+                      _F(FONCTION=resp_0),
+                      _F(FONCTION=resp_1),
+                      _F(FONCTION=resp_2,
+                         LIST_PARA=listFr),
+                      _F(FONCTION=resp_3,
+                         LIST_PARA=listFr),
+                      _F(FONCTION=resp_4),
+                      _F(FONCTION=resp_5),
+                      _F(FONCTION=resp_6),
+                      _F(FONCTION=resp_7),
+                      _F(FONCTION=resp_8),
+                      _F(FONCTION=resp_9),
+                      _F(FONCTION=resp_10),
+                      _F(FONCTION=resp_11),
+                      _F(FONCTION=resp_12),
+                      _F(FONCTION=resp_13),
+                      _F(FONCTION=resp_14),
+                      _F(FONCTION=resp_15),
+                      _F(FONCTION=resp_16),
+                      _F(FONCTION=resp_17)),
+              SEPARATEUR='  ',
+              UNITE=8)
+
+IMPR_FONCTION(identifier='24:3',
+              COURBE=_F(FONCTION=resp_10,
+                        MARQUEUR=0,
+                        STYLE=1),
+              FORMAT='XMGRACE',
+              UNITE=2)
+
+FIN()
