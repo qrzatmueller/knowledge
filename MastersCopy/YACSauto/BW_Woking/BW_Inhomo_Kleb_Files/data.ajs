@@ -30,14 +30,209 @@
         }
       },
       {
-        "name": "CurrentCase",
+        "name": "RunCase_2",
         "stages": [
-          1,
-          2,
-          3,
-          4,
           5,
-          6
+          6,
+          7,
+          8
+        ],
+        "baseFolder": "RunCase_2",
+        "jobInfos": {
+          "jobid": "0",
+          "mode": "Interactive",
+          "name": "RunCase_2_Stage_3",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "version": "16.5",
+          "mpicpu": 1,
+          "nodes": 1,
+          "startTime": "mar. 04 nov. 2025 13:56:56 CET",
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
+          "wckey": "P10WB:ASTER",
+          "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command_salome\" name=\"RunCase_2_Stage_3\">\n    <user_part>\n      <job_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_2/Result-Stage_3/launcher_script</job_file>\n      <work_directory>/tmp/salome_localres_workdir_pqrz/pqrz-pqrz-FEM-mar.-04-135656.095</work_directory>\n      <result_directory>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_2/Result-Stage_3</result_directory>\n      <files>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_2/Result-Stage_3/RunCase_2_Stage_3.comm</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_2/Result-S1_Prp/_ExportedFromSalomeObject_0_1_2_6.med</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_2/Result-Stage_3/export</in_file>\n        <out_file>res00.txt</out_file>\n        <out_file>randpoint.agr</out_file>\n        <out_file>message</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>RUNNING</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n",
+          "studyid": "16371-0001-pqrz-FEM",
+          "language": "fr",
+          "execmode": "Use optimized version"
+        }
+      },
+      {
+        "name": "RunCase_3",
+        "stages": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "baseFolder": "RunCase_3",
+        "jobInfos": {
+          "jobid": "1",
+          "mode": "Interactive",
+          "name": "RunCase_3_Stage_3",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "version": "16.5",
+          "mpicpu": 1,
+          "nodes": 1,
+          "startTime": "mar. 04 nov. 2025 13:59:27 CET",
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
+          "wckey": "P10WB:ASTER",
+          "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command_salome\" name=\"RunCase_3_Stage_3\">\n    <user_part>\n      <job_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_3/Result-Stage_3/launcher_script</job_file>\n      <work_directory>/tmp/salome_localres_workdir_pqrz/pqrz-pqrz-FEM-mar.-04-135927.241</work_directory>\n      <result_directory>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_3/Result-Stage_3</result_directory>\n      <files>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_3/Result-Stage_3/RunCase_3_Stage_3.comm</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_3/Result-S1_Prp/_ExportedFromSalomeObject_0_1_2_6.med</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_3/Result-Stage_3/export</in_file>\n        <out_file>randpoint.agr</out_file>\n        <out_file>res00.txt</out_file>\n        <out_file>message</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>RUNNING</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n",
+          "studyid": "16371-0002-pqrz-FEM",
+          "language": "fr",
+          "execmode": "Use optimized version"
+        }
+      },
+      {
+        "name": "RunCase_4",
+        "stages": [
+          13,
+          14,
+          15,
+          16
+        ],
+        "baseFolder": "RunCase_4",
+        "jobInfos": {
+          "jobid": "2",
+          "mode": "Interactive",
+          "name": "RunCase_4_Stage_3",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "version": "16.5",
+          "mpicpu": 1,
+          "nodes": 1,
+          "startTime": "mar. 04 nov. 2025 15:05:41 CET",
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
+          "wckey": "P10WB:ASTER",
+          "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command_salome\" name=\"RunCase_4_Stage_3\">\n    <user_part>\n      <job_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_4/Result-Stage_3/launcher_script</job_file>\n      <work_directory>/tmp/salome_localres_workdir_pqrz/pqrz-pqrz-FEM-mar.-04-150541.001</work_directory>\n      <result_directory>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_4/Result-Stage_3</result_directory>\n      <files>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_4/Result-Stage_3/RunCase_4_Stage_3.comm</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_4/Result-S1_Prp/_ExportedFromSalomeObject_0_1_2_6.med</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_4/Result-Stage_3/export</in_file>\n        <out_file>randpoint.agr</out_file>\n        <out_file>res00.txt</out_file>\n        <out_file>message</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>RUNNING</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n",
+          "studyid": "16371-0003-pqrz-FEM",
+          "language": "fr",
+          "execmode": "Use optimized version"
+        }
+      },
+      {
+        "name": "RunCase_5",
+        "stages": [
+          17,
+          18,
+          19,
+          20
+        ],
+        "baseFolder": "RunCase_5",
+        "jobInfos": {
+          "jobid": "3",
+          "mode": "Interactive",
+          "name": "RunCase_5_Stage_3",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "version": "16.5",
+          "mpicpu": 1,
+          "nodes": 1,
+          "startTime": "mar. 04 nov. 2025 15:10:03 CET",
+          "endTime": "mar. 04 nov. 2025 15:10:12 CET",
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
+          "wckey": "P10WB:ASTER",
+          "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command_salome\" name=\"RunCase_5_Stage_3\">\n    <user_part>\n      <job_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_5/Result-Stage_3/launcher_script</job_file>\n      <work_directory>/tmp/salome_localres_workdir_pqrz/pqrz-pqrz-FEM-mar.-04-151002.650</work_directory>\n      <result_directory>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_5/Result-Stage_3</result_directory>\n      <files>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_5/Result-Stage_3/RunCase_5_Stage_3.comm</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_5/Result-S1_Prp/_ExportedFromSalomeObject_0_1_2_6.med</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_5/Result-Stage_3/export</in_file>\n        <out_file>randpoint.agr</out_file>\n        <out_file>res00.txt</out_file>\n        <out_file>message</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>FINISHED</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n",
+          "studyid": "16371-0004-pqrz-FEM",
+          "language": "fr",
+          "execmode": "Use optimized version"
+        }
+      },
+      {
+        "name": "RunCase_6",
+        "stages": [
+          21,
+          22,
+          23,
+          24
+        ],
+        "baseFolder": "RunCase_6",
+        "jobInfos": {
+          "jobid": "4",
+          "mode": "Interactive",
+          "name": "RunCase_6_Stage_3",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "version": "16.5",
+          "mpicpu": 1,
+          "nodes": 1,
+          "startTime": "mar. 04 nov. 2025 15:13:01 CET",
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
+          "wckey": "P10WB:ASTER",
+          "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command_salome\" name=\"RunCase_6_Stage_3\">\n    <user_part>\n      <job_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_6/Result-Stage_3/launcher_script</job_file>\n      <work_directory>/tmp/salome_localres_workdir_pqrz/pqrz-pqrz-FEM-mar.-04-151300.911</work_directory>\n      <result_directory>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_6/Result-Stage_3</result_directory>\n      <files>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_6/Result-Stage_3/RunCase_6_Stage_3.comm</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_6/Result-S1_Prp/_ExportedFromSalomeObject_0_1_2_6.med</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_6/Result-Stage_3/export</in_file>\n        <out_file>randpoint.agr</out_file>\n        <out_file>res00.txt</out_file>\n        <out_file>message</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>RUNNING</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n",
+          "studyid": "16371-0005-pqrz-FEM",
+          "language": "fr",
+          "execmode": "Use optimized version"
+        }
+      },
+      {
+        "name": "RunCase_7",
+        "stages": [
+          25,
+          26,
+          27,
+          28
+        ],
+        "baseFolder": "RunCase_7",
+        "jobInfos": {
+          "jobid": "5",
+          "mode": "Interactive",
+          "name": "RunCase_7_Stage_3",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "version": "16.5",
+          "mpicpu": 1,
+          "nodes": 1,
+          "startTime": "mar. 04 nov. 2025 15:18:45 CET",
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
+          "wckey": "P10WB:ASTER",
+          "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command_salome\" name=\"RunCase_7_Stage_3\">\n    <user_part>\n      <job_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_7/Result-Stage_3/launcher_script</job_file>\n      <work_directory>/tmp/salome_localres_workdir_pqrz/pqrz-pqrz-FEM-mar.-04-151845.348</work_directory>\n      <result_directory>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_7/Result-Stage_3</result_directory>\n      <files>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_7/Result-Stage_3/RunCase_7_Stage_3.comm</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_7/Result-S1_Prp/_ExportedFromSalomeObject_0_1_2_6.med</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_7/Result-Stage_3/export</in_file>\n        <out_file>randpoint.agr</out_file>\n        <out_file>res00.txt</out_file>\n        <out_file>message</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>RUNNING</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n",
+          "studyid": "16371-0006-pqrz-FEM",
+          "language": "fr",
+          "execmode": "Use optimized version"
+        }
+      },
+      {
+        "name": "RunCase_8",
+        "stages": [
+          29,
+          30,
+          31,
+          32
+        ],
+        "baseFolder": "RunCase_8",
+        "jobInfos": {
+          "jobid": "6",
+          "mode": "Interactive",
+          "name": "RunCase_8_Stage_3",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "version": "16.5",
+          "mpicpu": 1,
+          "nodes": 1,
+          "startTime": "mar. 04 nov. 2025 15:21:23 CET",
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
+          "wckey": "P10WB:ASTER",
+          "dumpString": "<?xml version=\"1.0\"?>\n<!--SALOME Launcher job-->\n<jobs>\n  <job type=\"command_salome\" name=\"RunCase_8_Stage_3\">\n    <user_part>\n      <job_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_8/Result-Stage_3/launcher_script</job_file>\n      <work_directory>/tmp/salome_localres_workdir_pqrz/pqrz-pqrz-FEM-mar.-04-152123.442</work_directory>\n      <result_directory>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_8/Result-Stage_3</result_directory>\n      <files>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_8/Result-Stage_3/RunCase_8_Stage_3.comm</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_8/Result-S1_Prp/_ExportedFromSalomeObject_0_1_2_6.med</in_file>\n        <in_file>/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/RunCase_8/Result-Stage_3/export</in_file>\n        <out_file>randpoint.agr</out_file>\n        <out_file>res00.txt</out_file>\n        <out_file>message</out_file>\n      </files>\n      <resource_params>\n        <name>localhost</name>\n        <nb_proc>1</nb_proc>\n        <nb_node>1</nb_node>\n      </resource_params>\n      <maximum_duration>00:15:00</maximum_duration>\n      <wckey>P10WB:ASTER</wckey>\n    </user_part>\n    <run_part>\n      <job_state>RUNNING</job_state>\n      <job_reference>0</job_reference>\n    </run_part>\n  </job>\n</jobs>\n",
+          "studyid": "16371-0007-pqrz-FEM",
+          "language": "fr",
+          "execmode": "Use optimized version"
+        }
+      },
+      {
+        "name": "RunCase_9",
+        "stages": [
+          33,
+          34,
+          35,
+          36
         ],
         "jobInfos": {
           "mode": "Interactive",
@@ -47,7 +242,31 @@
           "version": "16.5",
           "mpicpu": 1,
           "nodes": 1,
-          "folder": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files",
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
+          "wckey": "P10WB:ASTER",
+          "language": "fr",
+          "execmode": "Use optimized version"
+        }
+      },
+      {
+        "name": "CurrentCase",
+        "stages": [
+          33,
+          34,
+          35,
+          36,
+          37,
+          38
+        ],
+        "jobInfos": {
+          "mode": "Interactive",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "version": "16.5",
+          "mpicpu": 1,
+          "nodes": 1,
+          "folder": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files",
           "wckey": "P10WB:ASTER",
           "execmode": "Use optimized version"
         }
@@ -67,7 +286,58 @@
         "result": {
           "resstate": 144
         },
-        "uid": 1,
+        "uid": 1
+      },
+      {
+        "name": "Stage_6",
+        "text": "modes = CALC_MODES(CALC_FREQ=_F(NMAX_FREQ=20), MATR_MASS=MEB, MATR_RIGI=KH, OPTION='PLUS_PETITE', VERI_MODE=_F(STOP_ERREUR='NON'))",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 2
+      },
+      {
+        "name": "EBDyna",
+        "text": "resEB = DYNA_VIBRA(BASE_CALCUL='PHYS', CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, EXCIT=_F(CHARGE=load0, COEF_MULT=1), LIST_FREQ=listFr, MATR_MASS=MEB, MATR_RIGI=KH, MODELE=modelEB, SOLVEUR=_F(NPREC=9), TYPE_CALCUL='HARM')",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 3
+      },
+      {
+        "name": "Stage_3",
+        "text": "resTable = POST_RELEVE_T(ACTION=_F(FORMAT_C='REEL', GROUP_NO=('EBfullEdge', ), INTITULE='ViteDZreel', NOM_CHAM='VITE', NOM_CMP=('DZ', ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nnode_table = POST_RELEVE_T(ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'), INTITULE='sh', NOM_CHAM='VITE', NOM_CMP=('DZ', ), NUME_ORDRE=(1, ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nresp__3 = RECU_FONCTION(GROUP_NO=('Group_1', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__2 = RECU_FONCTION(GROUP_NO=('Group_2', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__1 = RECU_FONCTION(GROUP_NO=('Group_3', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_0 = RECU_FONCTION(GROUP_NO=('Group_4', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_1 = RECU_FONCTION(GROUP_NO=('Group_5', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_2 = RECU_FONCTION(GROUP_NO=('Group_6', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_3 = RECU_FONCTION(GROUP_NO=('Group_7', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_4 = RECU_FONCTION(GROUP_NO=('Group_8', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_5 = RECU_FONCTION(GROUP_NO=('Group_9', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_6 = RECU_FONCTION(GROUP_NO=('Group_10', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_7 = RECU_FONCTION(GROUP_NO=('Group_11', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_8 = RECU_FONCTION(GROUP_NO=('Group_12', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_9 = RECU_FONCTION(GROUP_NO=('Group_13', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_10 = RECU_FONCTION(GROUP_NO=('Group_14', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_11 = RECU_FONCTION(GROUP_NO=('Group_15', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_12 = RECU_FONCTION(GROUP_NO=('Group_16', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_13 = RECU_FONCTION(GROUP_NO=('Group_17', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_14 = RECU_FONCTION(GROUP_NO=('Group_18', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_15 = RECU_FONCTION(GROUP_NO=('Group_19', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_16 = RECU_FONCTION(GROUP_NO=('Group_20', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_17 = RECU_FONCTION(GROUP_NO=('Group_21', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nIMPR_FONCTION(COURBE=(_F(FONCTION=resp__3), _F(FONCTION=resp__2), _F(FONCTION=resp__1), _F(FONCTION=resp_0), _F(FONCTION=resp_1), _F(FONCTION=resp_2, LIST_PARA=listFr), _F(FONCTION=resp_3, LIST_PARA=listFr), _F(FONCTION=resp_4), _F(FONCTION=resp_5), _F(FONCTION=resp_6), _F(FONCTION=resp_7), _F(FONCTION=resp_8), _F(FONCTION=resp_9), _F(FONCTION=resp_10), _F(FONCTION=resp_11), _F(FONCTION=resp_12), _F(FONCTION=resp_13), _F(FONCTION=resp_14), _F(FONCTION=resp_15), _F(FONCTION=resp_16), _F(FONCTION=resp_17)), SEPARATEUR='  ', UNITE=8)\n\nIMPR_FONCTION(COURBE=_F(FONCTION=resp_10, MARQUEUR=0, STYLE=1), FORMAT='XMGRACE', UNITE=2)",
+        "files": [
+          {
+            "handle": 8,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/res00.txt",
+            "attr": 2
+          },
+          {
+            "handle": 2,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/randpoint.agr",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "resstate": 16
+        },
+        "uid": 4
+      },
+      {
+        "name": "S1_Prp",
+        "text": "tsth = 1 / 31\n\nttth = 1 / 11\n\none21th = 1 / 21\n\nmesh1D = LIRE_MAILLAGE(UNITE=20)\n\nmodelEB = AFFE_MODELE(AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'), MODELISATION='POU_D_E', PHENOMENE='MECANIQUE'), MAILLAGE=mesh1D)\n\nelemproEB = AFFE_CARA_ELEM(MODELE=modelEB, POUTRE=(_F(CARA=('HY', 'HZ'), GROUP_MA=('EBfullEdge', ), SECTION='RECTANGLE', VALE=(0.05, 0.002)), _F(CARA=('HY', 'HZ'), GROUP_MA=('InHomoSmall', ), SECTION='RECTANGLE', VALE=(0.05, 0.004))))\n\nmater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.01, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater2 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.4, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater3 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.02, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nfieldmatEB = AFFE_MATERIAU(AFFE=(_F(MATER=(mater, ), TOUT='OUI'), _F(GROUP_MA=('InHomoSmall', ), MATER=(mater2, )), _F(GROUP_MA=('SecondPartEdges', ), MATER=(mater3, ))), MAILLAGE=mesh1D, MODELE=modelEB)\n\nlistFr = DEFI_LIST_REEL(VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))\n\nlistFr2 = DEFI_LIST_REEL(DEBUT=20.0, INTERVALLE=_F(JUSQU_A=2000.0, NOMBRE=100))\n\nbcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'), GROUP_NO=('EBedgeEnc', )), MODELE=modelEB)\n\nload0 = AFFE_CHAR_MECA(FORCE_NODALE=_F(FZ=0.05, GROUP_NO=('Exc45', )), MODELE=modelEB)\n\nASSEMBLAGE(CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, CHARGE=(bcEB, ), MATR_ASSE=(_F(MATRICE=CO('MEB'), OPTION='MASS_MECA'), _F(MATRICE=CO('KEB'), OPTION='RIGI_MECA'), _F(MATRICE=CO('KH'), OPTION='RIGI_MECA_HYST')), MODELE=modelEB, NUME_DDL=CO('nddl'), VECT_ASSE=_F(CHARGE=(load0, ), OPTION='CHAR_MECA', VECTEUR=CO('FZEB')))",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:6",
+            "attr": 1
+          }
+        ],
+        "result": {
+          "resstate": 144
+        },
+        "uid": 5,
         "baseFolder": "Result-S1_Prp"
       },
       {
@@ -76,7 +346,7 @@
         "result": {
           "resstate": 144
         },
-        "uid": 2,
+        "uid": 6,
         "baseFolder": "Result-Stage_6"
       },
       {
@@ -85,7 +355,7 @@
         "result": {
           "resstate": 144
         },
-        "uid": 3,
+        "uid": 7,
         "baseFolder": "Result-EBDyna"
       },
       {
@@ -106,16 +376,376 @@
         "result": {
           "resstate": 16
         },
-        "uid": 4,
-        "baseFolder": "Result-Stage_3"
+        "uid": 8
       },
       {
-        "name": "Stage_5",
-        "text": "modes = CALC_MODES(CALC_FREQ=_F(NMAX_FREQ=20), MATR_MASS=MEB, MATR_RIGI=KH, OPTION='PLUS_PETITE')",
+        "name": "S1_Prp",
+        "text": "tsth = 1 / 31\n\nttth = 1 / 11\n\none21th = 1 / 21\n\nmesh1D = LIRE_MAILLAGE(UNITE=20)\n\nmodelEB = AFFE_MODELE(AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'), MODELISATION='POU_D_E', PHENOMENE='MECANIQUE'), MAILLAGE=mesh1D)\n\nelemproEB = AFFE_CARA_ELEM(MODELE=modelEB, POUTRE=(_F(CARA=('HY', 'HZ'), GROUP_MA=('EBfullEdge', ), SECTION='RECTANGLE', VALE=(0.05, 0.002)), _F(CARA=('HY', 'HZ'), GROUP_MA=('InHomoSmall', ), SECTION='RECTANGLE', VALE=(0.05, 0.004))))\n\nmater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.01, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater2 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.4, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater3 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.02, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nfieldmatEB = AFFE_MATERIAU(AFFE=(_F(MATER=(mater, ), TOUT='OUI'), _F(GROUP_MA=('InHomoSmall', ), MATER=(mater2, )), _F(GROUP_MA=('SecondPartEdges', ), MATER=(mater3, ))), MAILLAGE=mesh1D, MODELE=modelEB)\n\nDEFI_MATERIAU()\n\nlistFr = DEFI_LIST_REEL(VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))\n\nlistFr2 = DEFI_LIST_REEL(DEBUT=20.0, INTERVALLE=_F(JUSQU_A=2000.0, NOMBRE=100))\n\nbcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'), GROUP_NO=('EBedgeEnc', )), MODELE=modelEB)\n\nload0 = AFFE_CHAR_MECA(FORCE_NODALE=_F(FZ=0.05, GROUP_NO=('Exc45', )), MODELE=modelEB)\n\nASSEMBLAGE(CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, CHARGE=(bcEB, ), MATR_ASSE=(_F(MATRICE=CO('MEB'), OPTION='MASS_MECA'), _F(MATRICE=CO('KEB'), OPTION='RIGI_MECA'), _F(MATRICE=CO('KH'), OPTION='RIGI_MECA_HYST')), MODELE=modelEB, NUME_DDL=CO('nddl'), VECT_ASSE=_F(CHARGE=(load0, ), OPTION='CHAR_MECA', VECTEUR=CO('FZEB')))",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:6",
+            "attr": 1
+          }
+        ],
+        "result": {
+          "resstate": 144
+        },
+        "uid": 9
+      },
+      {
+        "name": "Stage_6",
+        "text": "modes = CALC_MODES(CALC_FREQ=_F(NMAX_FREQ=20), MATR_MASS=MEB, MATR_RIGI=KH, OPTION='PLUS_PETITE', VERI_MODE=_F(STOP_ERREUR='NON'))",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 10
+      },
+      {
+        "name": "EBDyna",
+        "text": "resEB = DYNA_VIBRA(BASE_CALCUL='PHYS', CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, EXCIT=_F(CHARGE=load0, COEF_MULT=1), LIST_FREQ=listFr, MATR_MASS=MEB, MATR_RIGI=KH, MODELE=modelEB, SOLVEUR=_F(NPREC=9), TYPE_CALCUL='HARM')",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 11
+      },
+      {
+        "name": "Stage_3",
+        "text": "resTable = POST_RELEVE_T(ACTION=_F(FORMAT_C='REEL', GROUP_NO=('EBfullEdge', ), INTITULE='ViteDZreel', NOM_CHAM='VITE', NOM_CMP=('DZ', ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nnode_table = POST_RELEVE_T(ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'), INTITULE='sh', NOM_CHAM='VITE', NOM_CMP=('DZ', ), NUME_ORDRE=(1, ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nresp__3 = RECU_FONCTION(GROUP_NO=('Group_1', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__2 = RECU_FONCTION(GROUP_NO=('Group_2', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__1 = RECU_FONCTION(GROUP_NO=('Group_3', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_0 = RECU_FONCTION(GROUP_NO=('Group_4', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_1 = RECU_FONCTION(GROUP_NO=('Group_5', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_2 = RECU_FONCTION(GROUP_NO=('Group_6', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_3 = RECU_FONCTION(GROUP_NO=('Group_7', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_4 = RECU_FONCTION(GROUP_NO=('Group_8', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_5 = RECU_FONCTION(GROUP_NO=('Group_9', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_6 = RECU_FONCTION(GROUP_NO=('Group_10', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_7 = RECU_FONCTION(GROUP_NO=('Group_11', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_8 = RECU_FONCTION(GROUP_NO=('Group_12', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_9 = RECU_FONCTION(GROUP_NO=('Group_13', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_10 = RECU_FONCTION(GROUP_NO=('Group_14', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_11 = RECU_FONCTION(GROUP_NO=('Group_15', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_12 = RECU_FONCTION(GROUP_NO=('Group_16', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_13 = RECU_FONCTION(GROUP_NO=('Group_17', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_14 = RECU_FONCTION(GROUP_NO=('Group_18', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_15 = RECU_FONCTION(GROUP_NO=('Group_19', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_16 = RECU_FONCTION(GROUP_NO=('Group_20', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_17 = RECU_FONCTION(GROUP_NO=('Group_21', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nIMPR_FONCTION(COURBE=(_F(FONCTION=resp__3), _F(FONCTION=resp__2), _F(FONCTION=resp__1), _F(FONCTION=resp_0), _F(FONCTION=resp_1), _F(FONCTION=resp_2, LIST_PARA=listFr), _F(FONCTION=resp_3, LIST_PARA=listFr), _F(FONCTION=resp_4), _F(FONCTION=resp_5), _F(FONCTION=resp_6), _F(FONCTION=resp_7), _F(FONCTION=resp_8), _F(FONCTION=resp_9), _F(FONCTION=resp_10), _F(FONCTION=resp_11), _F(FONCTION=resp_12), _F(FONCTION=resp_13), _F(FONCTION=resp_14), _F(FONCTION=resp_15), _F(FONCTION=resp_16), _F(FONCTION=resp_17)), SEPARATEUR='  ', UNITE=4)\n\nIMPR_FONCTION(COURBE=_F(FONCTION=resp_10, MARQUEUR=0, STYLE=1), FORMAT='XMGRACE', UNITE=2)",
+        "files": [
+          {
+            "handle": 4,
+            "filename": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/resF/res00.txt",
+            "attr": 2
+          },
+          {
+            "handle": 2,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/randpoint.agr",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "resstate": 16
+        },
+        "uid": 12
+      },
+      {
+        "name": "S1_Prp",
+        "text": "tsth = 1 / 31\n\nttth = 1 / 11\n\none21th = 1 / 21\n\nmesh1D = LIRE_MAILLAGE(UNITE=20)\n\nmodelEB = AFFE_MODELE(AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'), MODELISATION='POU_D_E', PHENOMENE='MECANIQUE'), MAILLAGE=mesh1D)\n\nelemproEB = AFFE_CARA_ELEM(MODELE=modelEB, POUTRE=(_F(CARA=('HY', 'HZ'), GROUP_MA=('EBfullEdge', ), SECTION='RECTANGLE', VALE=(0.05, 0.002)), _F(CARA=('HY', 'HZ'), GROUP_MA=('InHomoSmall', ), SECTION='RECTANGLE', VALE=(0.05, 0.004))))\n\nmater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.01, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater2 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.4, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater3 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.5, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nfieldmatEB = AFFE_MATERIAU(AFFE=(_F(MATER=(mater, ), TOUT='OUI'), _F(GROUP_MA=('InHomoSmall', ), MATER=(mater2, )), _F(GROUP_MA=('SecondPartEdges', ), MATER=(mater3, ))), MAILLAGE=mesh1D, MODELE=modelEB)\n\nlistFr = DEFI_LIST_REEL(VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))\n\nlistFr2 = DEFI_LIST_REEL(DEBUT=20.0, INTERVALLE=_F(JUSQU_A=2000.0, NOMBRE=100))\n\nDEFI_LIST_REEL()\n\nbcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'), GROUP_NO=('EBedgeEnc', )), MODELE=modelEB)\n\nload0 = AFFE_CHAR_MECA(FORCE_NODALE=_F(FZ=0.05, GROUP_NO=('Exc45', )), MODELE=modelEB)\n\nASSEMBLAGE(CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, CHARGE=(bcEB, ), MATR_ASSE=(_F(MATRICE=CO('MEB'), OPTION='MASS_MECA'), _F(MATRICE=CO('KEB'), OPTION='RIGI_MECA'), _F(MATRICE=CO('KH'), OPTION='RIGI_MECA_HYST')), MODELE=modelEB, NUME_DDL=CO('nddl'), VECT_ASSE=_F(CHARGE=(load0, ), OPTION='CHAR_MECA', VECTEUR=CO('FZEB')))",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:6",
+            "attr": 1
+          }
+        ],
+        "result": {
+          "resstate": 144
+        },
+        "uid": 13
+      },
+      {
+        "name": "Stage_6",
+        "text": "modes = CALC_MODES(CALC_FREQ=_F(NMAX_FREQ=1), MATR_MASS=MEB, MATR_RIGI=KH, OPTION='PLUS_PETITE', VERI_MODE=_F(STOP_ERREUR='NON'))",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 14
+      },
+      {
+        "name": "EBDyna",
+        "text": "resEB = DYNA_VIBRA(BASE_CALCUL='PHYS', CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, EXCIT=_F(CHARGE=load0, COEF_MULT=1), LIST_FREQ=listFr, MATR_MASS=MEB, MATR_RIGI=KH, MODELE=modelEB, SOLVEUR=_F(NPREC=9), TYPE_CALCUL='HARM')\n\nDYNA_VIBRA()",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 15
+      },
+      {
+        "name": "Stage_3",
+        "text": "resTable = POST_RELEVE_T(ACTION=_F(FORMAT_C='REEL', GROUP_NO=('EBfullEdge', ), INTITULE='ViteDZreel', NOM_CHAM='VITE', NOM_CMP=('DZ', ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nnode_table = POST_RELEVE_T(ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'), INTITULE='sh', NOM_CHAM='VITE', NOM_CMP=('DZ', ), NUME_ORDRE=(1, ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nresp__3 = RECU_FONCTION(GROUP_NO=('Group_1', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__2 = RECU_FONCTION(GROUP_NO=('Group_2', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__1 = RECU_FONCTION(GROUP_NO=('Group_3', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_0 = RECU_FONCTION(GROUP_NO=('Group_4', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_1 = RECU_FONCTION(GROUP_NO=('Group_5', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_2 = RECU_FONCTION(GROUP_NO=('Group_6', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_3 = RECU_FONCTION(GROUP_NO=('Group_7', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_4 = RECU_FONCTION(GROUP_NO=('Group_8', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_5 = RECU_FONCTION(GROUP_NO=('Group_9', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_6 = RECU_FONCTION(GROUP_NO=('Group_10', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_7 = RECU_FONCTION(GROUP_NO=('Group_11', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_8 = RECU_FONCTION(GROUP_NO=('Group_12', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_9 = RECU_FONCTION(GROUP_NO=('Group_13', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_10 = RECU_FONCTION(GROUP_NO=('Group_14', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_11 = RECU_FONCTION(GROUP_NO=('Group_15', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_12 = RECU_FONCTION(GROUP_NO=('Group_16', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_13 = RECU_FONCTION(GROUP_NO=('Group_17', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_14 = RECU_FONCTION(GROUP_NO=('Group_18', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_15 = RECU_FONCTION(GROUP_NO=('Group_19', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_16 = RECU_FONCTION(GROUP_NO=('Group_20', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_17 = RECU_FONCTION(GROUP_NO=('Group_21', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nIMPR_FONCTION(COURBE=(_F(FONCTION=resp__3), _F(FONCTION=resp__2), _F(FONCTION=resp__1), _F(FONCTION=resp_0), _F(FONCTION=resp_1), _F(FONCTION=resp_2, LIST_PARA=listFr), _F(FONCTION=resp_3, LIST_PARA=listFr), _F(FONCTION=resp_4), _F(FONCTION=resp_5), _F(FONCTION=resp_6), _F(FONCTION=resp_7), _F(FONCTION=resp_8), _F(FONCTION=resp_9), _F(FONCTION=resp_10), _F(FONCTION=resp_11), _F(FONCTION=resp_12), _F(FONCTION=resp_13), _F(FONCTION=resp_14), _F(FONCTION=resp_15), _F(FONCTION=resp_16), _F(FONCTION=resp_17)), SEPARATEUR='  ', UNITE=4)\n\nIMPR_FONCTION(COURBE=_F(FONCTION=resp_10, MARQUEUR=0, STYLE=1), FORMAT='XMGRACE', UNITE=2)",
+        "files": [
+          {
+            "handle": 4,
+            "filename": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/resF/res00.txt",
+            "attr": 2
+          },
+          {
+            "handle": 2,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/randpoint.agr",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "resstate": 16
+        },
+        "uid": 16
+      },
+      {
+        "name": "S1_Prp",
+        "text": "tsth = 1 / 31\n\nttth = 1 / 11\n\none21th = 1 / 21\n\nmesh1D = LIRE_MAILLAGE(UNITE=20)\n\nmodelEB = AFFE_MODELE(AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'), MODELISATION='POU_D_E', PHENOMENE='MECANIQUE'), MAILLAGE=mesh1D)\n\nelemproEB = AFFE_CARA_ELEM(MODELE=modelEB, POUTRE=(_F(CARA=('HY', 'HZ'), GROUP_MA=('EBfullEdge', ), SECTION='RECTANGLE', VALE=(0.05, 0.002)), _F(CARA=('HY', 'HZ'), GROUP_MA=('InHomoSmall', ), SECTION='RECTANGLE', VALE=(0.05, 0.004))))\n\nmater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.01, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater2 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.4, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater3 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.5, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nfieldmatEB = AFFE_MATERIAU(AFFE=(_F(MATER=(mater, ), TOUT='OUI'), _F(GROUP_MA=('InHomoSmall', ), MATER=(mater2, )), _F(GROUP_MA=('SecondPartEdges', ), MATER=(mater3, ))), MAILLAGE=mesh1D, MODELE=modelEB)\n\nlistFr = DEFI_LIST_REEL(VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))\n\nlistFr2 = DEFI_LIST_REEL(DEBUT=20.0, INTERVALLE=_F(JUSQU_A=2000.0, NOMBRE=50))\n\nbcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'), GROUP_NO=('EBedgeEnc', )), MODELE=modelEB)\n\nload0 = AFFE_CHAR_MECA(FORCE_NODALE=_F(FZ=0.05, GROUP_NO=('Exc45', )), MODELE=modelEB)\n\nASSEMBLAGE(CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, CHARGE=(bcEB, ), MATR_ASSE=(_F(MATRICE=CO('MEB'), OPTION='MASS_MECA'), _F(MATRICE=CO('KEB'), OPTION='RIGI_MECA'), _F(MATRICE=CO('KH'), OPTION='RIGI_MECA_HYST')), MODELE=modelEB, NUME_DDL=CO('nddl'), VECT_ASSE=_F(CHARGE=(load0, ), OPTION='CHAR_MECA', VECTEUR=CO('FZEB')))",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:6",
+            "attr": 1
+          }
+        ],
+        "result": {
+          "resstate": 144
+        },
+        "uid": 17,
+        "baseFolder": "Result-S1_Prp"
+      },
+      {
+        "name": "Stage_6",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 18,
+        "baseFolder": "Result-Stage_6"
+      },
+      {
+        "name": "EBDyna",
+        "text": "resEB = DYNA_VIBRA(BASE_CALCUL='PHYS', CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, EXCIT=_F(CHARGE=load0, COEF_MULT=1), LIST_FREQ=listFr2, MATR_MASS=MEB, MATR_RIGI=KH, MODELE=modelEB, SOLVEUR=_F(NPREC=9), TYPE_CALCUL='HARM')",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 19,
+        "baseFolder": "Result-EBDyna"
+      },
+      {
+        "name": "Stage_3",
+        "text": "resTable = POST_RELEVE_T(ACTION=_F(FORMAT_C='REEL', GROUP_NO=('EBfullEdge', ), INTITULE='ViteDZreel', NOM_CHAM='VITE', NOM_CMP=('DZ', ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nnode_table = POST_RELEVE_T(ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'), INTITULE='sh', NOM_CHAM='VITE', NOM_CMP=('DZ', ), NUME_ORDRE=(1, ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nresp__3 = RECU_FONCTION(GROUP_NO=('Group_1', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__2 = RECU_FONCTION(GROUP_NO=('Group_2', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__1 = RECU_FONCTION(GROUP_NO=('Group_3', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_0 = RECU_FONCTION(GROUP_NO=('Group_4', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_1 = RECU_FONCTION(GROUP_NO=('Group_5', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_2 = RECU_FONCTION(GROUP_NO=('Group_6', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_3 = RECU_FONCTION(GROUP_NO=('Group_7', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_4 = RECU_FONCTION(GROUP_NO=('Group_8', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_5 = RECU_FONCTION(GROUP_NO=('Group_9', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_6 = RECU_FONCTION(GROUP_NO=('Group_10', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_7 = RECU_FONCTION(GROUP_NO=('Group_11', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_8 = RECU_FONCTION(GROUP_NO=('Group_12', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_9 = RECU_FONCTION(GROUP_NO=('Group_13', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_10 = RECU_FONCTION(GROUP_NO=('Group_14', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_11 = RECU_FONCTION(GROUP_NO=('Group_15', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_12 = RECU_FONCTION(GROUP_NO=('Group_16', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_13 = RECU_FONCTION(GROUP_NO=('Group_17', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_14 = RECU_FONCTION(GROUP_NO=('Group_18', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_15 = RECU_FONCTION(GROUP_NO=('Group_19', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_16 = RECU_FONCTION(GROUP_NO=('Group_20', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_17 = RECU_FONCTION(GROUP_NO=('Group_21', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nIMPR_FONCTION(COURBE=(_F(FONCTION=resp__3), _F(FONCTION=resp__2), _F(FONCTION=resp__1), _F(FONCTION=resp_0), _F(FONCTION=resp_1), _F(FONCTION=resp_2, LIST_PARA=listFr), _F(FONCTION=resp_3, LIST_PARA=listFr), _F(FONCTION=resp_4), _F(FONCTION=resp_5), _F(FONCTION=resp_6), _F(FONCTION=resp_7), _F(FONCTION=resp_8), _F(FONCTION=resp_9), _F(FONCTION=resp_10), _F(FONCTION=resp_11), _F(FONCTION=resp_12), _F(FONCTION=resp_13), _F(FONCTION=resp_14), _F(FONCTION=resp_15), _F(FONCTION=resp_16), _F(FONCTION=resp_17)), SEPARATEUR='  ', UNITE=4)\n\nIMPR_FONCTION(COURBE=_F(FONCTION=resp_10, MARQUEUR=0, STYLE=1), FORMAT='XMGRACE', UNITE=2)",
+        "files": [
+          {
+            "handle": 4,
+            "filename": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/resF/res00.txt",
+            "attr": 2
+          },
+          {
+            "handle": 2,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/randpoint.agr",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "resstate": 16
+        },
+        "uid": 20
+      },
+      {
+        "name": "S1_Prp",
+        "text": "tsth = 1 / 31\n\nttth = 1 / 11\n\none21th = 1 / 21\n\nmesh1D = LIRE_MAILLAGE(UNITE=20)\n\nmodelEB = AFFE_MODELE(AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'), MODELISATION='POU_D_E', PHENOMENE='MECANIQUE'), MAILLAGE=mesh1D)\n\nelemproEB = AFFE_CARA_ELEM(MODELE=modelEB, POUTRE=(_F(CARA=('HY', 'HZ'), GROUP_MA=('EBfullEdge', ), SECTION='RECTANGLE', VALE=(0.05, 0.002)), _F(CARA=('HY', 'HZ'), GROUP_MA=('InHomoSmall', ), SECTION='RECTANGLE', VALE=(0.05, 0.004))))\n\nmater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.01, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater2 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.4, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater3 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.5, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nfieldmatEB = AFFE_MATERIAU(AFFE=(_F(MATER=(mater, ), TOUT='OUI'), _F(GROUP_MA=('InHomoSmall', ), MATER=(mater2, )), _F(GROUP_MA=('SecondPartEdges', ), MATER=(mater3, ))), MAILLAGE=mesh1D, MODELE=modelEB)\n\nlistFr = DEFI_LIST_REEL(VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))\n\nlistFr2 = DEFI_LIST_REEL(DEBUT=20.0, INTERVALLE=_F(JUSQU_A=2000.0, NOMBRE=50))\n\nbcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'), GROUP_NO=('EBedgeEnc', )), MODELE=modelEB)\n\nload0 = AFFE_CHAR_MECA(FORCE_NODALE=_F(FZ=0.05, GROUP_NO=('Exc45', )), MODELE=modelEB)\n\nASSEMBLAGE(CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, CHARGE=(bcEB, ), MATR_ASSE=(_F(MATRICE=CO('MEB'), OPTION='MASS_MECA'), _F(MATRICE=CO('KEB'), OPTION='RIGI_MECA'), _F(MATRICE=CO('KH'), OPTION='RIGI_MECA_HYST')), MODELE=modelEB, NUME_DDL=CO('nddl'), VECT_ASSE=_F(CHARGE=(load0, ), OPTION='CHAR_MECA', VECTEUR=CO('FZEB')))",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:6",
+            "attr": 1
+          }
+        ],
+        "result": {
+          "resstate": 144
+        },
+        "uid": 21
+      },
+      {
+        "name": "Stage_6",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 22
+      },
+      {
+        "name": "EBDyna",
+        "text": "resEB = DYNA_VIBRA(BASE_CALCUL='PHYS', CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, EXCIT=_F(CHARGE=load0, COEF_MULT=1), LIST_FREQ=listFr2, MATR_MASS=MEB, MATR_RIGI=KH, MODELE=modelEB, SOLVEUR=_F(NPREC=9), TYPE_CALCUL='HARM')",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 23
+      },
+      {
+        "name": "Stage_3",
+        "text": "resTable = POST_RELEVE_T(ACTION=_F(FORMAT_C='REEL', GROUP_NO=('EBfullEdge', ), INTITULE='ViteDZreel', NOM_CHAM='VITE', NOM_CMP=('DZ', ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nnode_table = POST_RELEVE_T(ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'), INTITULE='sh', NOM_CHAM='VITE', NOM_CMP=('DZ', ), NUME_ORDRE=(1, ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nresp__3 = RECU_FONCTION(GROUP_NO=('Group_1', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__2 = RECU_FONCTION(GROUP_NO=('Group_2', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__1 = RECU_FONCTION(GROUP_NO=('Group_3', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_0 = RECU_FONCTION(GROUP_NO=('Group_4', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_1 = RECU_FONCTION(GROUP_NO=('Group_5', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_2 = RECU_FONCTION(GROUP_NO=('Group_6', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_3 = RECU_FONCTION(GROUP_NO=('Group_7', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_4 = RECU_FONCTION(GROUP_NO=('Group_8', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_5 = RECU_FONCTION(GROUP_NO=('Group_9', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_6 = RECU_FONCTION(GROUP_NO=('Group_10', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_7 = RECU_FONCTION(GROUP_NO=('Group_11', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_8 = RECU_FONCTION(GROUP_NO=('Group_12', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_9 = RECU_FONCTION(GROUP_NO=('Group_13', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_10 = RECU_FONCTION(GROUP_NO=('Group_14', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_11 = RECU_FONCTION(GROUP_NO=('Group_15', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_12 = RECU_FONCTION(GROUP_NO=('Group_16', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_13 = RECU_FONCTION(GROUP_NO=('Group_17', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_14 = RECU_FONCTION(GROUP_NO=('Group_18', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_15 = RECU_FONCTION(GROUP_NO=('Group_19', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_16 = RECU_FONCTION(GROUP_NO=('Group_20', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_17 = RECU_FONCTION(GROUP_NO=('Group_21', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nIMPR_FONCTION(COURBE=(_F(FONCTION=resp__3), _F(FONCTION=resp__2), _F(FONCTION=resp__1), _F(FONCTION=resp_0), _F(FONCTION=resp_1), _F(FONCTION=resp_2, LIST_PARA=listFr), _F(FONCTION=resp_3, LIST_PARA=listFr), _F(FONCTION=resp_4), _F(FONCTION=resp_5), _F(FONCTION=resp_6), _F(FONCTION=resp_7), _F(FONCTION=resp_8), _F(FONCTION=resp_9), _F(FONCTION=resp_10), _F(FONCTION=resp_11), _F(FONCTION=resp_12), _F(FONCTION=resp_13), _F(FONCTION=resp_14), _F(FONCTION=resp_15), _F(FONCTION=resp_16), _F(FONCTION=resp_17)), SEPARATEUR='  ', UNITE=4)\n\nIMPR_FONCTION(COURBE=_F(FONCTION=resp_10, MARQUEUR=0, STYLE=1), FORMAT='XMGRACE', UNITE=2)",
+        "files": [
+          {
+            "handle": 4,
+            "filename": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/resF/res00.txt",
+            "attr": 2
+          },
+          {
+            "handle": 2,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/randpoint.agr",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "resstate": 16
+        },
+        "uid": 24
+      },
+      {
+        "name": "S1_Prp",
+        "text": "tsth = 1 / 31\n\nttth = 1 / 11\n\none21th = 1 / 21\n\nmesh1D = LIRE_MAILLAGE(UNITE=20)\n\nmodelEB = AFFE_MODELE(AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'), MODELISATION='POU_D_E', PHENOMENE='MECANIQUE'), MAILLAGE=mesh1D)\n\nelemproEB = AFFE_CARA_ELEM(MODELE=modelEB, POUTRE=(_F(CARA=('HY', 'HZ'), GROUP_MA=('EBfullEdge', ), SECTION='RECTANGLE', VALE=(0.05, 0.002)), _F(CARA=('HY', 'HZ'), GROUP_MA=('InHomoSmall', ), SECTION='RECTANGLE', VALE=(0.05, 0.004))))\n\nmater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.01, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater2 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.4, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater3 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.5, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nfieldmatEB = AFFE_MATERIAU(AFFE=(_F(MATER=(mater, ), TOUT='OUI'), _F(GROUP_MA=('InHomoSmall', ), MATER=(mater2, )), _F(GROUP_MA=('SecondPartEdges', ), MATER=(mater3, ))), MAILLAGE=mesh1D, MODELE=modelEB)\n\nlistFr = DEFI_LIST_REEL(VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))\n\nlistFr2 = DEFI_LIST_REEL(DEBUT=20.0, INTERVALLE=_F(JUSQU_A=2000.0, PAS=40.0))\n\nbcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'), GROUP_NO=('EBedgeEnc', )), MODELE=modelEB)\n\nload0 = AFFE_CHAR_MECA(FORCE_NODALE=_F(FZ=0.05, GROUP_NO=('Exc45', )), MODELE=modelEB)\n\nASSEMBLAGE(CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, CHARGE=(bcEB, ), MATR_ASSE=(_F(MATRICE=CO('MEB'), OPTION='MASS_MECA'), _F(MATRICE=CO('KEB'), OPTION='RIGI_MECA'), _F(MATRICE=CO('KH'), OPTION='RIGI_MECA_HYST')), MODELE=modelEB, NUME_DDL=CO('nddl'), VECT_ASSE=_F(CHARGE=(load0, ), OPTION='CHAR_MECA', VECTEUR=CO('FZEB')))",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:6",
+            "attr": 1
+          }
+        ],
+        "result": {
+          "resstate": 144
+        },
+        "uid": 25,
+        "baseFolder": "Result-S1_Prp"
+      },
+      {
+        "name": "Stage_6",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 26,
+        "baseFolder": "Result-Stage_6"
+      },
+      {
+        "name": "EBDyna",
+        "text": "resEB = DYNA_VIBRA(BASE_CALCUL='PHYS', CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, EXCIT=_F(CHARGE=load0, COEF_MULT=1), LIST_FREQ=listFr2, MATR_MASS=MEB, MATR_RIGI=KH, MODELE=modelEB, SOLVEUR=_F(NPREC=9), TYPE_CALCUL='HARM')",
+        "result": {
+          "resstate": 144
+        },
+        "uid": 27,
+        "baseFolder": "Result-EBDyna"
+      },
+      {
+        "name": "Stage_3",
+        "text": "resTable = POST_RELEVE_T(ACTION=_F(FORMAT_C='REEL', GROUP_NO=('EBfullEdge', ), INTITULE='ViteDZreel', NOM_CHAM='VITE', NOM_CMP=('DZ', ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nnode_table = POST_RELEVE_T(ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'), INTITULE='sh', NOM_CHAM='VITE', NOM_CMP=('DZ', ), NUME_ORDRE=(1, ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nresp__3 = RECU_FONCTION(GROUP_NO=('Group_1', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__2 = RECU_FONCTION(GROUP_NO=('Group_2', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__1 = RECU_FONCTION(GROUP_NO=('Group_3', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_0 = RECU_FONCTION(GROUP_NO=('Group_4', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_1 = RECU_FONCTION(GROUP_NO=('Group_5', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_2 = RECU_FONCTION(GROUP_NO=('Group_6', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_3 = RECU_FONCTION(GROUP_NO=('Group_7', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_4 = RECU_FONCTION(GROUP_NO=('Group_8', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_5 = RECU_FONCTION(GROUP_NO=('Group_9', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_6 = RECU_FONCTION(GROUP_NO=('Group_10', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_7 = RECU_FONCTION(GROUP_NO=('Group_11', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_8 = RECU_FONCTION(GROUP_NO=('Group_12', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_9 = RECU_FONCTION(GROUP_NO=('Group_13', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_10 = RECU_FONCTION(GROUP_NO=('Group_14', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_11 = RECU_FONCTION(GROUP_NO=('Group_15', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_12 = RECU_FONCTION(GROUP_NO=('Group_16', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_13 = RECU_FONCTION(GROUP_NO=('Group_17', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_14 = RECU_FONCTION(GROUP_NO=('Group_18', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_15 = RECU_FONCTION(GROUP_NO=('Group_19', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_16 = RECU_FONCTION(GROUP_NO=('Group_20', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_17 = RECU_FONCTION(GROUP_NO=('Group_21', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nIMPR_FONCTION(COURBE=(_F(FONCTION=resp__3), _F(FONCTION=resp__2), _F(FONCTION=resp__1), _F(FONCTION=resp_0), _F(FONCTION=resp_1), _F(FONCTION=resp_2, LIST_PARA=listFr), _F(FONCTION=resp_3, LIST_PARA=listFr), _F(FONCTION=resp_4), _F(FONCTION=resp_5), _F(FONCTION=resp_6), _F(FONCTION=resp_7), _F(FONCTION=resp_8), _F(FONCTION=resp_9), _F(FONCTION=resp_10), _F(FONCTION=resp_11), _F(FONCTION=resp_12), _F(FONCTION=resp_13), _F(FONCTION=resp_14), _F(FONCTION=resp_15), _F(FONCTION=resp_16), _F(FONCTION=resp_17)), SEPARATEUR='  ', UNITE=4)\n\nIMPR_FONCTION(COURBE=_F(FONCTION=resp_10, MARQUEUR=0, STYLE=1), FORMAT='XMGRACE', UNITE=2)",
+        "files": [
+          {
+            "handle": 4,
+            "filename": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/resF/res00.txt",
+            "attr": 2
+          },
+          {
+            "handle": 2,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/randpoint.agr",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "resstate": 16
+        },
+        "uid": 28
+      },
+      {
+        "name": "S1_Prp",
+        "text": "tsth = 1 / 31\n\nttth = 1 / 11\n\none21th = 1 / 21\n\nmesh1D = LIRE_MAILLAGE(UNITE=20)\n\nmodelEB = AFFE_MODELE(AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'), MODELISATION='POU_D_E', PHENOMENE='MECANIQUE'), MAILLAGE=mesh1D)\n\nelemproEB = AFFE_CARA_ELEM(MODELE=modelEB, POUTRE=(_F(CARA=('HY', 'HZ'), GROUP_MA=('EBfullEdge', ), SECTION='RECTANGLE', VALE=(0.05, 0.002)), _F(CARA=('HY', 'HZ'), GROUP_MA=('InHomoSmall', ), SECTION='RECTANGLE', VALE=(0.05, 0.004))))\n\nmater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.01, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater2 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.4, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater3 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.5, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nfieldmatEB = AFFE_MATERIAU(AFFE=(_F(MATER=(mater, ), TOUT='OUI'), _F(GROUP_MA=('InHomoSmall', ), MATER=(mater2, )), _F(GROUP_MA=('SecondPartEdges', ), MATER=(mater3, ))), MAILLAGE=mesh1D, MODELE=modelEB)\n\nlistFr = DEFI_LIST_REEL(VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))\n\nlistFr2 = DEFI_LIST_REEL(DEBUT=20.0, INTERVALLE=_F(JUSQU_A=2000.0, PAS=40.0))\n\nbcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'), GROUP_NO=('EBedgeEnc', )), MODELE=modelEB)\n\nload0 = AFFE_CHAR_MECA(FORCE_NODALE=_F(FZ=0.05, GROUP_NO=('Exc45', )), MODELE=modelEB)\n\nASSEMBLAGE(CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, CHARGE=(bcEB, ), MATR_ASSE=(_F(MATRICE=CO('MEB'), OPTION='MASS_MECA'), _F(MATRICE=CO('KEB'), OPTION='RIGI_MECA'), _F(MATRICE=CO('KH'), OPTION='RIGI_MECA_HYST')), MODELE=modelEB, NUME_DDL=CO('nddl'), VECT_ASSE=_F(CHARGE=(load0, ), OPTION='CHAR_MECA', VECTEUR=CO('FZEB')))",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:6",
+            "attr": 1
+          }
+        ],
+        "result": {
+          "resstate": 160
+        },
+        "uid": 29,
+        "baseFolder": "Result-S1_Prp"
+      },
+      {
+        "name": "Stage_6",
+        "result": {
+          "resstate": 160
+        },
+        "uid": 30,
+        "baseFolder": "Result-Stage_6"
+      },
+      {
+        "name": "EBDyna",
+        "text": "resEB = DYNA_VIBRA(BASE_CALCUL='PHYS', CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, EXCIT=_F(CHARGE=load0, COEF_MULT=1), LIST_FREQ=listFr2, MATR_MASS=MEB, MATR_RIGI=KH, MODELE=modelEB, SOLVEUR=_F(NPREC=9), TYPE_CALCUL='HARM')",
+        "result": {
+          "resstate": 160
+        },
+        "uid": 31,
+        "baseFolder": "Result-EBDyna"
+      },
+      {
+        "name": "Stage_3",
+        "text": "resTable = POST_RELEVE_T(ACTION=_F(FORMAT_C='REEL', GROUP_NO=('EBfullEdge', ), INTITULE='ViteDZreel', NOM_CHAM='VITE', NOM_CMP=('DZ', ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nnode_table = POST_RELEVE_T(ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'), INTITULE='sh', NOM_CHAM='VITE', NOM_CMP=('DZ', ), NUME_ORDRE=(1, ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nresp__3 = RECU_FONCTION(GROUP_NO=('Group_1', ), INTERPOL=('LOG', ), NOM_CHAM='VITE', NOM_CMP='DZ', PROL_DROITE='LINEAIRE', RESULTAT=resEB)\n\nresp__2 = RECU_FONCTION(GROUP_NO=('Group_2', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__1 = RECU_FONCTION(GROUP_NO=('Group_3', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_0 = RECU_FONCTION(GROUP_NO=('Group_4', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_1 = RECU_FONCTION(GROUP_NO=('Group_5', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_2 = RECU_FONCTION(GROUP_NO=('Group_6', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_3 = RECU_FONCTION(GROUP_NO=('Group_7', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_4 = RECU_FONCTION(GROUP_NO=('Group_8', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_5 = RECU_FONCTION(GROUP_NO=('Group_9', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_6 = RECU_FONCTION(GROUP_NO=('Group_10', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_7 = RECU_FONCTION(GROUP_NO=('Group_11', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_8 = RECU_FONCTION(GROUP_NO=('Group_12', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_9 = RECU_FONCTION(GROUP_NO=('Group_13', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_10 = RECU_FONCTION(GROUP_NO=('Group_14', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_11 = RECU_FONCTION(GROUP_NO=('Group_15', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_12 = RECU_FONCTION(GROUP_NO=('Group_16', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_13 = RECU_FONCTION(GROUP_NO=('Group_17', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_14 = RECU_FONCTION(GROUP_NO=('Group_18', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_15 = RECU_FONCTION(GROUP_NO=('Group_19', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_16 = RECU_FONCTION(GROUP_NO=('Group_20', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_17 = RECU_FONCTION(GROUP_NO=('Group_21', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nIMPR_FONCTION(COURBE=(_F(FONCTION=resp__3), _F(FONCTION=resp__2), _F(FONCTION=resp__1), _F(FONCTION=resp_0), _F(FONCTION=resp_1), _F(FONCTION=resp_2, LIST_PARA=listFr), _F(FONCTION=resp_3, LIST_PARA=listFr), _F(FONCTION=resp_4), _F(FONCTION=resp_5), _F(FONCTION=resp_6), _F(FONCTION=resp_7), _F(FONCTION=resp_8), _F(FONCTION=resp_9), _F(FONCTION=resp_10), _F(FONCTION=resp_11), _F(FONCTION=resp_12), _F(FONCTION=resp_13), _F(FONCTION=resp_14), _F(FONCTION=resp_15), _F(FONCTION=resp_16), _F(FONCTION=resp_17)), SEPARATEUR='  ', UNITE=4)\n\nIMPR_FONCTION(COURBE=_F(FONCTION=resp_10, MARQUEUR=0, STYLE=1), FORMAT='XMGRACE', UNITE=2)",
+        "files": [
+          {
+            "handle": 4,
+            "filename": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/resF/res00.txt",
+            "attr": 2
+          },
+          {
+            "handle": 2,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/randpoint.agr",
+            "attr": 2
+          }
+        ],
+        "result": {
+          "resstate": 32
+        },
+        "uid": 32
+      },
+      {
+        "name": "S1_Prp",
+        "text": "tsth = 1 / 31\n\nttth = 1 / 11\n\none21th = 1 / 21\n\nmesh1D = LIRE_MAILLAGE(UNITE=20)\n\nmodelEB = AFFE_MODELE(AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'), MODELISATION='POU_D_E', PHENOMENE='MECANIQUE'), MAILLAGE=mesh1D)\n\nelemproEB = AFFE_CARA_ELEM(MODELE=modelEB, POUTRE=(_F(CARA=('HY', 'HZ'), GROUP_MA=('EBfullEdge', ), SECTION='RECTANGLE', VALE=(0.05, 0.002)), _F(CARA=('HY', 'HZ'), GROUP_MA=('InHomoSmall', ), SECTION='RECTANGLE', VALE=(0.05, 0.004))))\n\nmater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.01, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater2 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.4, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nmater3 = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.5, E=210000000000.0, NU=0.3, RHO=7850.0))\n\nfieldmatEB = AFFE_MATERIAU(AFFE=(_F(MATER=(mater, ), TOUT='OUI'), _F(GROUP_MA=('InHomoSmall', ), MATER=(mater2, )), _F(GROUP_MA=('SecondPartEdges', ), MATER=(mater3, ))), MAILLAGE=mesh1D, MODELE=modelEB)\n\nlistFr = DEFI_LIST_REEL(VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))\n\nlistFr2 = DEFI_LIST_REEL(DEBUT=20.0, INTERVALLE=_F(JUSQU_A=2000.0, PAS=40.0))\n\nbcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'), GROUP_NO=('EBedgeEnc', )), MODELE=modelEB)\n\nload0 = AFFE_CHAR_MECA(FORCE_NODALE=_F(FZ=0.05, GROUP_NO=('Exc45', )), MODELE=modelEB)\n\nASSEMBLAGE(CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, CHARGE=(bcEB, ), MATR_ASSE=(_F(MATRICE=CO('MEB'), OPTION='MASS_MECA'), _F(MATRICE=CO('KEB'), OPTION='RIGI_MECA'), _F(MATRICE=CO('KH'), OPTION='RIGI_MECA_HYST')), MODELE=modelEB, NUME_DDL=CO('nddl'), VECT_ASSE=_F(CHARGE=(load0, ), OPTION='CHAR_MECA', VECTEUR=CO('FZEB')))",
+        "files": [
+          {
+            "handle": 20,
+            "filename": "0:1:2:6",
+            "attr": 1
+          }
+        ],
+        "result": {
+          "resstate": 129
+        },
+        "uid": 33
+      },
+      {
+        "name": "Stage_6",
+        "result": {
+          "resstate": 129
+        },
+        "uid": 34
+      },
+      {
+        "name": "EBDyna",
+        "text": "resEB = DYNA_VIBRA(BASE_CALCUL='PHYS', CARA_ELEM=elemproEB, CHAM_MATER=fieldmatEB, EXCIT=_F(CHARGE=load0, COEF_MULT=1), LIST_FREQ=listFr2, MATR_MASS=MEB, MATR_RIGI=KH, MODELE=modelEB, SOLVEUR=_F(NPREC=9), TYPE_CALCUL='HARM')",
+        "result": {
+          "resstate": 129
+        },
+        "uid": 35
+      },
+      {
+        "name": "Stage_3",
+        "text": "resTable = POST_RELEVE_T(ACTION=_F(FORMAT_C='REEL', GROUP_NO=('EBfullEdge', ), INTITULE='ViteDZreel', NOM_CHAM='VITE', NOM_CMP=('DZ', ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nnode_table = POST_RELEVE_T(ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'), INTITULE='sh', NOM_CHAM='VITE', NOM_CMP=('DZ', ), NUME_ORDRE=(1, ), OPERATION=('EXTRACTION', ), RESULTAT=resEB))\n\nresp__3 = RECU_FONCTION(GROUP_NO=('Group_1', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__2 = RECU_FONCTION(GROUP_NO=('Group_2', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp__1 = RECU_FONCTION(GROUP_NO=('Group_3', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_0 = RECU_FONCTION(GROUP_NO=('Group_4', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_1 = RECU_FONCTION(GROUP_NO=('Group_5', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_2 = RECU_FONCTION(GROUP_NO=('Group_6', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_3 = RECU_FONCTION(GROUP_NO=('Group_7', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_4 = RECU_FONCTION(GROUP_NO=('Group_8', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_5 = RECU_FONCTION(GROUP_NO=('Group_9', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_6 = RECU_FONCTION(GROUP_NO=('Group_10', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_7 = RECU_FONCTION(GROUP_NO=('Group_11', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_8 = RECU_FONCTION(GROUP_NO=('Group_12', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_9 = RECU_FONCTION(GROUP_NO=('Group_13', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_10 = RECU_FONCTION(GROUP_NO=('Group_14', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_11 = RECU_FONCTION(GROUP_NO=('Group_15', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_12 = RECU_FONCTION(GROUP_NO=('Group_16', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_13 = RECU_FONCTION(GROUP_NO=('Group_17', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_14 = RECU_FONCTION(GROUP_NO=('Group_18', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_15 = RECU_FONCTION(GROUP_NO=('Group_19', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_16 = RECU_FONCTION(GROUP_NO=('Group_20', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nresp_17 = RECU_FONCTION(GROUP_NO=('Group_21', ), NOM_CHAM='VITE', NOM_CMP='DZ', RESULTAT=resEB)\n\nIMPR_FONCTION(COURBE=(_F(FONCTION=resp__3), _F(FONCTION=resp__2), _F(FONCTION=resp__1), _F(FONCTION=resp_0), _F(FONCTION=resp_1), _F(FONCTION=resp_2), _F(FONCTION=resp_3), _F(FONCTION=resp_4), _F(FONCTION=resp_5), _F(FONCTION=resp_6), _F(FONCTION=resp_7), _F(FONCTION=resp_8), _F(FONCTION=resp_9), _F(FONCTION=resp_10), _F(FONCTION=resp_11), _F(FONCTION=resp_12), _F(FONCTION=resp_13), _F(FONCTION=resp_14), _F(FONCTION=resp_15), _F(FONCTION=resp_16), _F(FONCTION=resp_17)), SEPARATEUR='  ', UNITE=4)\n\nIMPR_FONCTION(COURBE=_F(FONCTION=resp_10, MARQUEUR=0, STYLE=1), FORMAT='XMGRACE', UNITE=2)",
+        "files": [
+          {
+            "handle": 2,
+            "filename": "/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/BW_Woking/BW_Inhomo_Kleb_Files/resF/randpoint.agr",
+            "attr": 2
+          },
+          {
+            "handle": 4,
+            "filename": "/home/pqrz/Documents/knowledge/MastersCopy/YACSauto/BW_Woking/BW_Inhomo_Kleb_Files/resF/res00.txt",
+            "attr": 2
+          }
+        ],
         "result": {
           "resstate": 1
         },
-        "uid": 5
+        "uid": 36
+      },
+      {
+        "name": "Stage_5",
+        "text": "modes1 = CALC_MODES(CALC_FREQ=_F(NMAX_FREQ=20), MATR_MASS=MEB, MATR_RIGI=KH, OPTION='PLUS_PETITE')",
+        "result": {
+          "resstate": 1
+        },
+        "uid": 37
       },
       {
         "name": "Stage_4",
@@ -131,7 +761,7 @@
         "result": {
           "resstate": 1
         },
-        "uid": 6
+        "uid": 38
       }
     ],
     "aster": "stable",
