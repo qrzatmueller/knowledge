@@ -1,0 +1,23 @@
+{
+  "history": {
+    "cases": [
+      {
+        "name": "CurrentCase",
+        "jobInfos": {
+          "mode": "Batch",
+          "server": "localhost",
+          "memory": 2048,
+          "time": "00:15:00",
+          "mpicpu": 1,
+          "nodes": 1,
+          "wckey": "P10WB:ASTER",
+          "execmode": "Use optimized version"
+        }
+      }
+    ],
+    "aster": "stable",
+    "versionMajor": 16,
+    "versionMinor": 5
+  },
+  "minor": 10
+}

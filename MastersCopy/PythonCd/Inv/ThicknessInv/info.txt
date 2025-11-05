@@ -1,0 +1,16 @@
+te quedaste en la confusion de interpretar resultados complejos...
+valdria la pena hacer plots que tomen en cuentra el e⁽iwt) ?? porque
+parece que tanto la parte real como la imaginaria tienen un efecto en esto.
+
+por otro lado. la simulation tiene demasiado damping. valdria la pena correrlas
+otra vez pero con mucho menos damping para ver si la inhomogenity afecta
+a la phase de gran manera.
+
+aprendiste por lo menos a sacar los valores que quires sin meterte en tantos
+pedos.
+
+
+Cases to study
+damping 0, 0.2, 0.5
+inhomogenity type small, large
+type of simulation OLFbeam, BWbeam

@@ -1,0 +1,23 @@
+
+P actions make_etude
+P debug nodebug
+P memjob 2097152
+P memory_limit 2048.0
+P mode interactif
+P mpi_nbcpu 1
+P mpi_nbnoeud 1
+P ncpus 1
+P nomjob RunCase_72_Stage_3
+P origine AsterStudy 0.11
+P server localhost
+P studyid 7360-0012-daMachine
+P time_limit 900.0
+P tpsjob 16
+P version 16.5
+A memjeveux 256.0
+A tpmax 900.0
+F comm comm.comm D  1
+F libr /home/cr8or/Documents/MasterThesis/mt_eq/CodeAsterModels/YACSauto/YACS_BW/baseFiles/meshFile.med D  20
+F libr /home/cr8or/Documents/MasterThesis/mt_eq/CodeAsterModels/YACSauto/YACS_BW/autoRes/res0.txt R  9
+F libr randpoint.agr R  29
+F mess message R  6

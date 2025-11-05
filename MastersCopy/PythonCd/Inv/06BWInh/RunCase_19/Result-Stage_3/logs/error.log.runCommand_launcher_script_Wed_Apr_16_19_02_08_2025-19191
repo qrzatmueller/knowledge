@@ -1,0 +1,89 @@
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:93: DeprecationWarning: invalid escape sequence \+
+  mat = re.search('^([-a-zA-Z_0-9@\+]+)=(.*$)', line)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:611: DeprecationWarning: invalid escape sequence \.
+  name = re.sub('\.gz$', '', src)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:856: DeprecationWarning: invalid escape sequence \s
+  exp = re.compile('^processor\s+:\s+([0-9]+)', re.MULTILINE)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/build.py:1430: DeprecationWarning: invalid escape sequence \(
+  expr = re.compile('^[A-Za-z_0-9]+ *= *[OPERPROCMACROFORM]+ *\(.*',
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/build.py:1553: DeprecationWarning: invalid escape sequence \.
+  pattern='TOTAL_JOB +: +([0-9\.]+) +: +([0-9\.]+) +: +([0-9\.]+) +: +([0-9\.]+)')
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/build.py:1614: DeprecationWarning: invalid escape sequence \s
+  mat = re.search('^ *SUPPR +([^\s]+)', line)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/build.py:1661: DeprecationWarning: invalid escape sequence \.
+  mat = re.search('^ *TESSUPPR +([-_a-zA-Z0-9\.]+)', line)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/build.py:1701: DeprecationWarning: invalid escape sequence \#
+  linc = re.findall('^\#include *[\"\<]{1}(.*)[\"\>]{1}', code, re.MULTILINE)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/build.py:1718: DeprecationWarning: invalid escape sequence \#
+  mat = re.search('^\#include.*%s' % osp.basename(other), code, re.MULTILINE)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/calcul.py:579: DeprecationWarning: invalid escape sequence \.
+  mat = re.search('%s +([0-9\.]+) +([0-9\.]+) +([0-9\.]+) +([0-9\.]+)' % 'Total', txt)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/calcul.py:763: DeprecationWarning: invalid escape sequence \g
+  content = exp.sub('\g<1>%s = %s' % (para, pval), content)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/calcul.py:818: DeprecationWarning: invalid escape sequence \.
+  mat = re.search('JOBID *= *([0-9a-zA-Z\._\-]+)', txt)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/calcul.py:821: DeprecationWarning: invalid escape sequence \.
+  mat = re.search('QUEUE *= *([0-9a-zA-Z\._\-]+)', txt)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/calcul.py:825: DeprecationWarning: invalid escape sequence \.
+  mat = re.search('STUDYID *= *([0-9a-zA-Z\._\-]+)', txt)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/rex.py:72: DeprecationWarning: invalid escape sequence \@
+  exp = re.compile('\@%s\@(.*)\@FIN%s\@' % (ch, ch), re.MULTILINE | re.DOTALL)
+
+>>> 2025/04/16-19:02:12.352  [start@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/main.py:71]
+Command line run on 'daMachine'
+using python executable '/usr/bin/python3' :
+['/opt/salome_meca/2023.1.0_scibian_univ/prerequisites/Cea_archive-9100/../../tools/Code_aster_frontend-202310/bin/as_run',
+ '--vers=16.5',
+ '--getversion_path']
+
+>>> 2025/04/16-19:02:12.352  [__init__@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:194]
+AsterSystem param :
+{'remote_copy_protocol': 'SCP', 'remote_shell_protocol': 'SSH'}
+
+>>> 2025/04/16-19:02:12.352  [Shell@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:519]
+remote command ( <> daMachine and cr8or <> cr8or) ? False
+
+>>> 2025/04/16-19:02:12.352  [GetMemInfo@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:877]
+cmd :
+cat /proc/meminfo
+background : False
+follow_output : False
+
+>>> 2025/04/16-19:02:12.381  [GetMemInfo@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:884]
+GetMemInfo 'memtotal' returns : 15868
+
+>>> 2025/04/16-19:02:12.382  [Shell@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:519]
+remote command ( <> daMachine and cr8or <> cr8or) ? False
+
+>>> 2025/04/16-19:02:12.382  [GetCpuInfo@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:855]
+cmd :
+cat /proc/cpuinfo
+background : False
+follow_output : False
+
+>>> 2025/04/16-19:02:12.398  [GetCpuInfo@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/system.py:863]
+GetCpuInfo 'numcpu' returns : 8
+
+>>> 2025/04/16-19:02:12.398  [get_limits@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/common_func.py:177]
+Limits returned :
+{'interactif_memmax': 15868,
+ 'interactif_mpi_nbpmax': 32,
+ 'interactif_nbpmax': 8,
+ 'interactif_tpsmax': '9999:00:00'}
+
+>>> 2025/04/16-19:02:12.399  [get_limits@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/common_func.py:177]
+Limits returned :
+{'batch_memmax': 15868,
+ 'batch_mpi_nbpmax': 32,
+ 'batch_nbpmax': 8,
+ 'batch_tpsmax': '9999:00:00'}
+
+>>> 2025/04/16-19:02:12.399  [PostConf@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/run.py:583]
+installation dirs (aster_root, confdir, localedir, LANG)
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/etc/codeaster
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/share/locale
+fr_FR.UTF-8
+
+>>> 2025/04/16-19:02:12.399  [Sortie@/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_frontend-202310/lib/python3.7/site-packages/asrun/run.py:732]
+exit 0

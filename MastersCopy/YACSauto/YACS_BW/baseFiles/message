@@ -1,0 +1,999 @@
+copying '/home/cr8or/Documents/MasterThesis/mt_eq/CodeAsterModels/YACSauto/YACS_BW/baseFiles/meshFile.med' to 'fort.20'...
+Ouverture en écriture du fichier ./vola.1
+
+<INFO> Démarrage de l'exécution.
+
+                  -- CODE_ASTER -- VERSION : DÉVELOPPEMENT STABILISÉE (testing) --                  
+                               Version 16.5.0 modifiée le 17/12/2023                                
+                             révision 9c25419eba4f - branche 'default'                              
+                                   Copyright EDF R&D 1991 - 2025                                    
+                                                                                                    
+                              Exécution du : Mon Apr 14 11:40:11 2025                               
+                                   Nom de la machine : daMachine                                    
+                                        Architecture : 64bit                                        
+                                    Type de processeur : x86_64                                     
+             Système d'exploitation : Linux-6.11.0-19-generic-x86_64-with-debian-10.13              
+                                  Langue des messages : fr (UTF-8)                                  
+                                     Version de Python : 3.7.3                                      
+                                     Version de NumPy : 1.16.2                                      
+                                     Parallélisme MPI : inactif                                     
+                                    Parallélisme OpenMP : actif                                     
+                              Nombre de processus OpenMP utilisés : 1                               
+                               Version de la librairie HDF5 : 1.10.3                                
+                                Version de la librairie MED : 4.1.1                                 
+                               Version de la librairie MFront : 4.1.0                               
+                               Version de la librairie MUMPS : 5.5.1c                               
+                                  Librairie PETSc : non disponible                                  
+                               Version de la librairie SCOTCH : 7.0.1                               
+
+starting the execution...
+Valeur initiale du temps CPU maximum =   2700 secondes
+  Valeur du temps CPU maximum passé aux commandes =   2430 secondes
+  Réserve CPU prévue = 270 secondes
+
+Ouverture en écriture du fichier ./glob.1
+
+Ouverture en écriture du fichier ./vola.1
+
+Ouverture en lecture du fichier
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_stable-1650/lib/aster/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Créée avec la version                   :  16.05.00
+     Nombre d'enregistrements utilisés       :  45
+     Nombre d'enregistrements maximum        :  512
+     Nombre d'enregistrements par fichier    :  512
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre d'identificateurs utilisés       :  123
+     Taille maximum du répertoire            :  300
+     Pourcentage d'utilisation du répertoire :  41 %
+
+Ouverture en lecture du fichier
+/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_stable-1650/lib/aster/elem.1
+
+Nom de la base                          :  ELEMBASE
+     Nombre d'enregistrements utilisés       :  45
+     Nombre d'enregistrements maximum        :  512
+     Nombre d'enregistrements par fichier    :  512
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  63
+     Volume des accès en lecture             :         49.22 Mo.
+     Nombre total d'accès en écriture        :  0
+     Volume des accès en écriture            :          0.00 Mo.
+     Nombre d'identificateurs utilisés       :  123
+     Taille maximum du répertoire            :  300
+     Pourcentage d'utilisation du répertoire :  41 %
+
+Relecture des catalogues des éléments faite.
+
+Fin de lecture (durée  0.026220  s.) 
+
+                      Mémoire limite pour l'allocation dynamique : 2560.00 Mo                       
+                         ajouté à l'initialisation du processus : 796.36 Mo                         
+                               Limite cible du processus : 3356.36 Mo                               
+                         Taille limite des fichiers d'échange : 2048.00 Go                          
+# Mémoire (Mo) :   796.36 /   787.79 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0001   user+syst:        0.39s (syst:        0.70s, elaps:        0.27s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd3:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0002 de ./comm.comm.changed.py, ligne 23
+mesh1D = LIRE_MAILLAGE(FORMAT='MED',
+                       INFO=1,
+                       INFO_MED=0,
+                       PARTITIONNEUR='SANS',
+                       UNITE=20,
+                       VERI_MAIL=_F(APLAT=0.001,
+                                    VERIF='OUI'))
+
+Nom MED du maillage : Mesh_3
+
+
+------------ MAILLAGE 00000001 - IMPRESSIONS NIVEAU  1 ------------
+
+
+NOMBRE DE NOEUDS                          97
+
+NOMBRE DE MAILLES                         96
+                              SEG2                   96
+
+NOMBRE DE GROUPES DE NOEUDS               25
+
+NOMBRE DE GROUPES DE MAILLES               1
+
+--------------------------------------------------------------------------------
+
+Vérification du maillage.
+
+# Résultat commande #0002 (LIRE_MAILLAGE): mesh1D ('<00000001>') de type <Mesh>
+# Mémoire (Mo) :   848.86 /   848.86 /   208.39 /   184.66 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0002   user+syst:        0.04s (syst:        0.01s, elaps:        0.06s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd4:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0003 de ./comm.comm.changed.py, ligne 29
+modelEB = AFFE_MODELE(AFFE=_F(GROUP_MA='EBfullEdge',
+                              MODELISATION='POU_D_E',
+                              PHENOMENE='MECANIQUE'),
+                      DISTRIBUTION=_F(METHODE='SOUS_DOMAINE',
+                                      PARTITIONNEUR='METIS'),
+                      INFO=1,
+                      MAILLAGE=mesh1D,
+                      VERI_JACOBIEN='OUI',
+                      VERI_NORM_IFS='OUI')
+
+Sur les 96 mailles du maillage 00000001, on a demandé l'affectation de 96, on a pu en affecter 96.
+Modélisation     Formulation      Type maille  Élément fini     Nombre
+POU_D_E          _                SEG2         MECA_POU_D_E     96
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0003 (AFFE_MODELE): modelEB ('<00000002>') de type <Model>
+# Mémoire (Mo) :   881.86 /   881.86 /   208.39 /   196.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0003   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd5:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0004 de ./comm.comm.changed.py, ligne 36
+elemproEB = AFFE_CARA_ELEM(INFO=1,
+                           MODELE=modelEB,
+                           POUTRE=_F(CARA=('HY', 'HZ'),
+                                     GROUP_MA='EBfullEdge',
+                                     SECTION='RECTANGLE',
+                                     VALE=(0.05, 0.01),
+                                     VARI_SECT='CONSTANT'))
+
+
+     LE MODELE 00000002 CONTIENT : 
+                                       96 ELEMENT(S) POUTRE          
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0004 (AFFE_CARA_ELEM): elemproEB ('<00000003>') de type
+<ElementaryCharacteristics>
+# Dépend de :
+# - modelEB ('<00000002>') de type <Model>
+# Mémoire (Mo) :   881.91 /   881.86 /   208.39 /   196.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0004   user+syst:        0.01s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd6:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0005 de ./comm.comm.changed.py, ligne 42
+mater = DEFI_MATERIAU(ELAS=_F(AMOR_HYST=0.5,
+                              B_ENDOGE=0.0,
+                              COEF_AMOR=1.0,
+                              E=210000000000.0,
+                              K_DESSIC=0.0,
+                              NU=0.3,
+                              RHO=7850.0),
+                      INFO=1)
+
+# Résultat commande #0005 (DEFI_MATERIAU): mater ('<00000004>') de type <Material>
+# Mémoire (Mo) :   882.52 /   882.27 /   208.39 /   196.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0005   user+syst:        0.01s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd7:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0006 de ./comm.comm.changed.py, ligne 48
+fieldmatEB = AFFE_MATERIAU(AFFE=_F(MATER=mater,
+                                   TOUT='OUI'),
+                           INFO=1,
+                           MAILLAGE=mesh1D,
+                           MODELE=modelEB)
+
+# Résultat commande #0006 (AFFE_MATERIAU): fieldmatEB ('<00000005>') de type <MaterialField>
+# Mémoire (Mo) :   882.52 /   882.27 /   208.39 /   196.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0006   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd8:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0007 de ./comm.comm.changed.py, ligne 51
+listFr = DEFI_LIST_REEL(INFO=1,
+                        VALE=(1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0, 12, 15.0, 17, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0, 90.0, 95.0, 100.0))
+
+# Résultat commande #0007 (DEFI_LIST_REEL): listFr ('<00000006>') de type <ListOfFloats>
+# Mémoire (Mo) :   882.52 /   882.27 /   208.39 /   196.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0007   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd9:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0008 de ./comm.comm.changed.py, ligne 59
+bcEB = AFFE_CHAR_MECA(DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'),
+                                  GROUP_NO=('EBedgeEnc', 'EBedgeFree')),
+                      DOUBLE_LAGRANGE='OUI',
+                      INFO=1,
+                      MODELE=modelEB,
+                      VERI_AFFE='OUI',
+                      VERI_NORM='OUI')
+
+# Résultat commande #0008 (AFFE_CHAR_MECA): bcEB ('<00000007>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   882.52 /   882.27 /   208.39 /   196.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0008   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd10:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0009 de ./comm.comm.changed.py, ligne 64
+load0 = AFFE_CHAR_MECA(DOUBLE_LAGRANGE='OUI',
+                       FORCE_NODALE=_F(FZ=0.2,
+                                       GROUP_NO='Exc45'),
+                       INFO=1,
+                       MODELE=modelEB,
+                       VERI_AFFE='OUI',
+                       VERI_NORM='OUI')
+
+# Résultat commande #0009 (AFFE_CHAR_MECA): load0 ('<00000008>') de type <MechanicalLoadReal>
+# Mémoire (Mo) :   882.52 /   882.27 /   208.39 /   196.87 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0009   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd11:1
+# ----------------------------------------------------------------------------------------------
+# Commande #0010 de ./comm.comm.changed.py, ligne 80
+ASSEMBLAGE(CARA_ELEM=elemproEB,
+           CHAM_MATER=fieldmatEB,
+           CHARGE=bcEB,
+           INFO=1,
+           INST=0.0,
+           MATR_ASSE=(_F(MATRICE=CO('MEB'),
+                         OPTION='MASS_MECA'),
+                      _F(MATRICE=CO('KEB'),
+                         MODE_FOURIER=0,
+                         OPTION='RIGI_MECA'),
+                      _F(MATRICE=CO('KH'),
+                         OPTION='RIGI_MECA_HYST')),
+           MODELE=modelEB,
+           NUME_DDL=CO('nddl'),
+           VECT_ASSE=_F(CHARGE=load0,
+                        MODE_FOURIER=0,
+                        OPTION='CHAR_MECA',
+                        VECTEUR=CO('FZEB')))
+
+Le système linéaire à résoudre a 606 degrés de liberté:
+   - 582 sont des degrés de liberté physiques
+     (ils sont portés par 97 noeuds du maillage)
+   - 24 sont les couples de paramètres de Lagrange associés
+     aux 12 relations linéaires dualisées.
+La matrice est de taille 606 équations.
+  Elle contient 5673 termes non nuls si elle est symétrique et 10740 termes non nuls si elle n'est
+pas symétrique.
+  Soit un taux de remplissage de   2.925 %.
+# Résultat commande #0010 (ASSEMBLAGE): MEB ('<0000001a>') de type <AssemblyMatrixDisplacementReal>
+# Résultat commande #0010 (ASSEMBLAGE): KEB ('<00000013>') de type <AssemblyMatrixDisplacementReal>
+# Résultat commande #0010 (ASSEMBLAGE): KH ('<00000021>') de type
+<AssemblyMatrixDisplacementComplex>
+# Résultat commande #0010 (ASSEMBLAGE): nddl ('<00000011>') de type <DOFNumbering>
+# Résultat commande #0010 (ASSEMBLAGE): FZEB ('<00000032>') de type <FieldOnNodesReal>
+# Mémoire (Mo) :   882.99 /   882.99 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0010   user+syst:        0.03s (syst:        0.00s, elaps:        0.04s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd0:2
+# ----------------------------------------------------------------------------------------------
+# Commande #0020 de ./comm.comm.changed.py, ligne 92
+resEB = DYNA_VIBRA(BASE_CALCUL='PHYS',
+                   CARA_ELEM=elemproEB,
+                   CHAM_MATER=fieldmatEB,
+                   EXCIT=_F(CHARGE=load0,
+                            COEF_MULT=5.0,
+                            PHAS_DEG=0.0,
+                            PUIS_PULS=0),
+                   LIST_FREQ=listFr,
+                   MATR_MASS=MEB,
+                   MATR_RIGI=KH,
+                   MODELE=modelEB,
+                   SOLVEUR=_F(ACCELERATION='FR',
+                              ELIM_LAGR='LAGR2',
+                              GESTION_MEMOIRE='AUTO',
+                              LOW_RANK_SEUIL=0.0,
+                              METHODE='MUMPS',
+                              NB_RHS=1,
+                              NPREC=8,
+                              PCENT_PIVOT=35,
+                              POSTTRAITEMENTS='AUTO',
+                              PRETRAITEMENTS='AUTO',
+                              RENUM='AUTO',
+                              RESI_RELA=-1.0,
+                              STOP_SINGULIER='OUI',
+                              TYPE_RESOL='AUTO'),
+                   TYPE_CALCUL='HARM')
+
+--------------------------------------------------------------------------------------
+
+D Y N A _ V I B R A
+=====================================================================================
+                     Calcul HARMonique sur base PHYSique
+=====================================================================================
+
+Modèle physique
+--------------------------------------------------------------------------------------
+    >> modèle mécanique : 00000002
+    >> nombre de DDL physiques : 606
+
+Matrices dynamiques pour la résolution
+--------------------------------------------------------------------------------------
+>> matrice de masse        : 0000001a
+    >> matrice de rigidité     : 00000021
+>> système conservatif, sans amortissement.
+
+Résolution
+--------------------------------------------------------------------------------------
+    >> fréquence minimale : 1.00000e+00
+    >> fréquence maximale : 1.00000e+02
+    >> nombre de fréquences calculées : 39
+
+Archivage
+--------------------------------------------------------------------------------------
+    >> fréquences archivées : toutes (39 fréquences)
+    >> champs archivés      : DEPL  VITE  ACCE
+
+======================================================================================
+
+Avancement du calcul
+--------------------------------------------------------------------------------------
+
+[  2%] Fréquence calculée : 1.00000e+00, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :     1
+[  5%] Fréquence calculée : 1.50000e+00, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :     2
+[ 10%] Fréquence calculée : 2.50000e+00, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :     4
+[ 15%] Fréquence calculée : 3.50000e+00, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :     6
+[ 20%] Fréquence calculée : 4.50000e+00, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :     8
+[ 25%] Fréquence calculée : 5.50000e+00, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :    10
+[ 30%] Fréquence calculée : 6.50000e+00, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :    12
+[ 35%] Fréquence calculée : 7.50000e+00, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :    14
+[100%] Fréquence calculée : 1.00000e+02, dernière fréquence archivée : 1.00000e+02, au numéro
+d'ordre :    39
+======================================================================================
+                                                                        Fin du calcul
+
+
+#1      Resolution des systemes lineaires                 CPU (USER+SYST/SYST/ELAPS):      0.14      0.04      0.15
+#2      Calculs elementaires et assemblages               CPU (USER+SYST/SYST/ELAPS):      0.00      0.00      0.00
+# Résultat commande #0020 (DYNA_VIBRA): resEB ('<00000033>') de type <FullHarmonicResult>
+# Dépend de :
+# - MEB ('<0000001a>') de type <AssemblyMatrixDisplacementReal>
+# - KH ('<00000021>') de type <AssemblyMatrixDisplacementComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0020   user+syst:        0.17s (syst:        0.04s, elaps:        0.20s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd0:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0021 de ./comm.comm.changed.py, ligne 98
+resp__3 = RECU_FONCTION(GROUP_NO='Group_1',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0021 (RECU_FONCTION): resp__3 ('<00000034>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0021   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd1:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0022 de ./comm.comm.changed.py, ligne 104
+resp__2 = RECU_FONCTION(GROUP_NO='Group_2',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0022 (RECU_FONCTION): resp__2 ('<00000035>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0022   user+syst:        0.01s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd2:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0023 de ./comm.comm.changed.py, ligne 110
+resp__1 = RECU_FONCTION(GROUP_NO='Group_3',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0023 (RECU_FONCTION): resp__1 ('<00000036>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0023   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd3:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0024 de ./comm.comm.changed.py, ligne 116
+resp_0 = RECU_FONCTION(GROUP_NO='Group_4',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0024 (RECU_FONCTION): resp_0 ('<00000037>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0024   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd4:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0025 de ./comm.comm.changed.py, ligne 122
+resp_1 = RECU_FONCTION(GROUP_NO='Group_5',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0025 (RECU_FONCTION): resp_1 ('<00000038>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0025   user+syst:        0.01s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd5:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0026 de ./comm.comm.changed.py, ligne 128
+resp_2 = RECU_FONCTION(GROUP_NO='Group_6',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0026 (RECU_FONCTION): resp_2 ('<00000039>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0026   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd6:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0027 de ./comm.comm.changed.py, ligne 134
+resp_3 = RECU_FONCTION(GROUP_NO='Group_7',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0027 (RECU_FONCTION): resp_3 ('<0000003a>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0027   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd7:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0028 de ./comm.comm.changed.py, ligne 140
+resp_4 = RECU_FONCTION(GROUP_NO='Group_8',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0028 (RECU_FONCTION): resp_4 ('<0000003b>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0028   user+syst:        0.01s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd8:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0029 de ./comm.comm.changed.py, ligne 146
+resp_5 = RECU_FONCTION(GROUP_NO='Group_9',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0029 (RECU_FONCTION): resp_5 ('<0000003c>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0029   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd9:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0030 de ./comm.comm.changed.py, ligne 152
+resp_6 = RECU_FONCTION(GROUP_NO='Group_10',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0030 (RECU_FONCTION): resp_6 ('<0000003d>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0030   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd10:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0031 de ./comm.comm.changed.py, ligne 158
+resp_7 = RECU_FONCTION(GROUP_NO='Group_11',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0031 (RECU_FONCTION): resp_7 ('<0000003e>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0031   user+syst:        0.01s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd11:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0032 de ./comm.comm.changed.py, ligne 164
+resp_8 = RECU_FONCTION(GROUP_NO='Group_12',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0032 (RECU_FONCTION): resp_8 ('<0000003f>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0032   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd12:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0033 de ./comm.comm.changed.py, ligne 170
+resp_9 = RECU_FONCTION(GROUP_NO='Group_13',
+                       INFO=1,
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+# Résultat commande #0033 (RECU_FONCTION): resp_9 ('<00000040>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0033   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd13:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0034 de ./comm.comm.changed.py, ligne 176
+resp_10 = RECU_FONCTION(GROUP_NO='Group_14',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0034 (RECU_FONCTION): resp_10 ('<00000041>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0034   user+syst:        0.01s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd14:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0035 de ./comm.comm.changed.py, ligne 182
+resp_11 = RECU_FONCTION(GROUP_NO='Group_15',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0035 (RECU_FONCTION): resp_11 ('<00000042>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0035   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd15:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0036 de ./comm.comm.changed.py, ligne 188
+resp_12 = RECU_FONCTION(GROUP_NO='Group_16',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0036 (RECU_FONCTION): resp_12 ('<00000043>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0036   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd16:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0037 de ./comm.comm.changed.py, ligne 194
+resp_13 = RECU_FONCTION(GROUP_NO='Group_17',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0037 (RECU_FONCTION): resp_13 ('<00000044>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0037   user+syst:        0.01s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd17:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0038 de ./comm.comm.changed.py, ligne 200
+resp_14 = RECU_FONCTION(GROUP_NO='Group_18',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0038 (RECU_FONCTION): resp_14 ('<00000045>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0038   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd18:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0039 de ./comm.comm.changed.py, ligne 206
+resp_15 = RECU_FONCTION(GROUP_NO='Group_19',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0039 (RECU_FONCTION): resp_15 ('<00000046>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0039   user+syst:        0.01s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd19:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0040 de ./comm.comm.changed.py, ligne 212
+resp_16 = RECU_FONCTION(GROUP_NO='Group_20',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0040 (RECU_FONCTION): resp_16 ('<00000047>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0040   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd20:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0041 de ./comm.comm.changed.py, ligne 218
+resp_17 = RECU_FONCTION(GROUP_NO='Group_21',
+                        INFO=1,
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+# Résultat commande #0041 (RECU_FONCTION): resp_17 ('<00000048>') de type <FunctionComplex>
+# Mémoire (Mo) :   889.71 /   884.66 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0041   user+syst:        0.00s (syst:        0.00s, elaps:        0.00s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd21:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0042 de ./comm.comm.changed.py, ligne 245
+IMPR_FONCTION(COMMENTAIRE='#',
+              COMM_PARA='',
+              COURBE=(_F(FONCTION=resp__3,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp__2,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp__1,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_0,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_1,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_2,
+                         FREQ_MARQUEUR=0,
+                         LIST_PARA=listFr,
+                         TRI='N'),
+                      _F(FONCTION=resp_3,
+                         FREQ_MARQUEUR=0,
+                         LIST_PARA=listFr,
+                         TRI='N'),
+                      _F(FONCTION=resp_4,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_5,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_6,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_7,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_8,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_9,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_10,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_11,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_12,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_13,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_14,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_15,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_16,
+                         FREQ_MARQUEUR=0,
+                         TRI='N'),
+                      _F(FONCTION=resp_17,
+                         FREQ_MARQUEUR=0,
+                         TRI='N')),
+              DEBUT_LIGNE='',
+              FIN_LIGNE='\n',
+              FORMAT='TABLEAU',
+              FORMAT_R='E12.5',
+              INFO=1,
+              SEPARATEUR='  ',
+              UNITE=9)
+
+# Mémoire (Mo) :   889.71 /   884.91 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0042   user+syst:        0.04s (syst:        0.01s, elaps:        0.04s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_cmd22:3
+# ----------------------------------------------------------------------------------------------
+# Commande #0064 de ./comm.comm.changed.py, ligne 252
+IMPR_FONCTION(COURBE=_F(FONCTION=resp_10,
+                        FREQ_MARQUEUR=0,
+                        MARQUEUR=0,
+                        STYLE=1,
+                        TRI='N'),
+              ECHELLE_X='LIN',
+              ECHELLE_Y='LIN',
+              FORMAT='XMGRACE',
+              INFO=1,
+              PILOTE='',
+              UNITE=29)
+
+# Mémoire (Mo) :   889.71 /   884.91 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0064   user+syst:        0.00s (syst:        0.00s, elaps:        0.01s)
+# ----------------------------------------------------------------------------------------------
+
+.. _stg1_txt254
+# ----------------------------------------------------------------------------------------------
+# Commande #0065 de ./comm.comm.changed.py, ligne 254
+FIN(INFO_RESU='NON',
+    RETASSAGE='NON')
+
+Saving objects...
+pi                       <class 'float'>
+e                        <class 'float'>
+tau                      <class 'float'>
+inf                      <class 'float'>
+nan                      <class 'float'>
+tsth                     <class 'float'>
+ttth                     <class 'float'>
+one21th                  <class 'float'>
+mesh1D                   <class 'libaster.Mesh'>
+modelEB                  <class 'libaster.Model'>
+elemproEB                <class 'libaster.ElementaryCharacteristics'>
+mater                    <class 'libaster.Material'>
+fieldmatEB               <class 'libaster.MaterialField'>
+listFr                   <class 'libaster.ListOfFloats'>
+bcEB                     <class 'libaster.MechanicalLoadReal'>
+load0                    <class 'libaster.MechanicalLoadReal'>
+nddl                     <class 'libaster.DOFNumbering'>
+KEB                      <class 'libaster.AssemblyMatrixDisplacementReal'>
+MEB                      <class 'libaster.AssemblyMatrixDisplacementReal'>
+KH                       <class 'libaster.AssemblyMatrixDisplacementComplex'>
+FZEB                     <class 'libaster.FieldOnNodesReal'>
+resEB                    <class 'libaster.FullHarmonicResult'>
+resp__3                  <class 'libaster.FunctionComplex'>
+resp__2                  <class 'libaster.FunctionComplex'>
+resp__1                  <class 'libaster.FunctionComplex'>
+resp_0                   <class 'libaster.FunctionComplex'>
+resp_1                   <class 'libaster.FunctionComplex'>
+resp_2                   <class 'libaster.FunctionComplex'>
+resp_3                   <class 'libaster.FunctionComplex'>
+resp_4                   <class 'libaster.FunctionComplex'>
+resp_5                   <class 'libaster.FunctionComplex'>
+resp_6                   <class 'libaster.FunctionComplex'>
+resp_7                   <class 'libaster.FunctionComplex'>
+resp_8                   <class 'libaster.FunctionComplex'>
+resp_9                   <class 'libaster.FunctionComplex'>
+resp_10                  <class 'libaster.FunctionComplex'>
+resp_11                  <class 'libaster.FunctionComplex'>
+resp_12                  <class 'libaster.FunctionComplex'>
+resp_13                  <class 'libaster.FunctionComplex'>
+resp_14                  <class 'libaster.FunctionComplex'>
+resp_15                  <class 'libaster.FunctionComplex'>
+resp_16                  <class 'libaster.FunctionComplex'>
+resp_17                  <class 'libaster.FunctionComplex'>
+
+ ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+ ║ <I> <CATAMESS_89>                                                                              ║
+ ║                                                                                                ║
+ ║ Liste des alarmes émises lors de l'exécution du calcul.                                        ║
+ ║                                                                                                ║
+ ║     Les alarmes que vous avez choisies d'ignorer sont précédées de (*).                        ║
+ ║     Nombre d'occurrences pour chacune des alarmes :                                            ║
+ ║            aucune alarme                                                                       ║
+ ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+ ---------------------------------------------------------------------------
+ Concepts de la base: G
+    Nom        Type                Taille (Mo)         Nombre      Nombre de
+                                                     d'objets       segments
+    TOTAL                                32.54            776           1043
+  
+    00000001   MAILLAGE_SDASTER           0.02             36             83
+    00000002   MODELE_SDASTER             0.01              9             14
+    00000003   CARA_ELEM                  0.04             38             58
+    00000033   DYNA_HARMO                 1.28            371            382
+    00000007   CHAR_MECA                  0.01             54             74
+    00000008   CHAR_MECA                  0.01             45             60
+    00000004   MATER_SDASTER              0.00              7              7
+    00000005   CHAM_MATER                 0.00              8             13
+    00000006   LISTR8_SDASTER             0.00              6              6
+    0000000a   MATR_ELEM_DEPL_R           0.00              3              3
+    0000001a   MATR_ASSE_DEPL_R           0.09              4             10
+    0000000e   RESUELEM_SDASTER           0.06              4             13
+    00000010   RESUELEM_SDASTER           0.00              4             18
+    00000011   NUME_DDL_SDASTER           0.05             15             20
+    00000013   MATR_ASSE_DEPL_R           0.09              5             11
+    00000014   *L_CHARGES                 0.00              1              1
+    00000016   MATR_ELEM_DEPL_R           0.00              3              3
+    00000018   RESUELEM_SDASTER           0.06              4             13
+    0000001b   *L_CHARGES                 0.00              1              1
+    00000041   FONCTION_C                 0.00              4              4
+    0000001d   MATR_ELEM_DEPL_C           0.00              3              3
+    0000003d   FONCTION_C                 0.00              4              4
+    0000001f   RESUELEM_SDASTER           0.11              4             13
+    00000020   RESUELEM_SDASTER           0.00              4             18
+    00000021   MATR_ASSE_DEPL_C           0.18              5             11
+    00000022   *L_CHARGES                 0.00              1              1
+    0000003b   FONCTION_C                 0.00              4              4
+    00000032   CHAM_NO_SDASTER            0.00              3              3
+    00000037   FONCTION_C                 0.00              4              4
+    00000034   FONCTION_C                 0.00              4              4
+    00000035   FONCTION_C                 0.00              4              4
+    00000036   FONCTION_C                 0.00              4              4
+    00000038   FONCTION_C                 0.00              4              4
+    00000039   FONCTION_C                 0.00              4              4
+    0000003a   FONCTION_C                 0.00              4              4
+    0000003c   FONCTION_C                 0.00              4              4
+    0000003e   FONCTION_C                 0.00              4              4
+    0000003f   FONCTION_C                 0.00              4              4
+    00000040   FONCTION_C                 0.00              4              4
+    00000042   FONCTION_C                 0.00              4              4
+    00000043   FONCTION_C                 0.00              4              4
+    00000044   FONCTION_C                 0.00              4              4
+    00000045   FONCTION_C                 0.00              4              4
+    00000046   FONCTION_C                 0.00              4              4
+    00000047   FONCTION_C                 0.00              4              4
+    00000048   FONCTION_C                 0.00              4              4
+    &FOZERO                               0.00              2              2
+    &&_NUM_C                              0.00              1              1
+    &CATA                                30.47             42            103
+    &&NMDOME                              0.00              2              2
+    &&VENEUM                              0.03              7             12
+ (*) sous-objets non accessible directement
+ ---------------------------------------------------------------------------
+Nom de la base                          :  GLOBALE
+     Nombre d'enregistrements utilisés       :  154
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  6
+     Volume des accès en lecture             :          4.69 Mo.
+     Nombre total d'accès en écriture        :  376
+     Volume des accès en écriture            :        293.75 Mo.
+     Nombre d'identificateurs utilisés       :  1270
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  63 %
+
+Nom de la base                          :  VOLATILE
+     Nombre d'enregistrements utilisés       :  107
+     Nombre d'enregistrements maximum        :  2684354
+     Nombre d'enregistrements par fichier    :  15728
+     Longueur d'enregistrement (octets)      :  819200
+     Nombre total d'accès en lecture         :  0
+     Volume des accès en lecture             :          0.00 Mo.
+     Nombre total d'accès en écriture        :  291
+     Volume des accès en écriture            :        227.34 Mo.
+     Nombre d'identificateurs utilisés       :  512
+     Taille maximum du répertoire            :  2000
+     Pourcentage d'utilisation du répertoire :  25 %
+
+<I> <FIN> ARRET NORMAL DANS "FIN" PAR APPEL A "JEFINI".
+  
+ <I> <FIN> MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :                     197.29 Mo
+ <I> <FIN> MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :                     208.39 Mo
+ <I> <FIN> MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS LORS DE L'EXECUTION :     889.71 Mo
+  
+ <I>       FERMETURE DES BASES EFFECTUEE
+  
+   STATISTIQUES CONCERNANT L'ALLOCATION DYNAMIQUE :
+     TAILLE CUMULEE MAXIMUM            :                  208  Mo.
+     TAILLE CUMULEE LIBEREE            :                   32  Mo.
+     NOMBRE TOTAL D'ALLOCATIONS        :                39397
+     NOMBRE TOTAL DE LIBERATIONS       :                39377
+     APPELS AU MECANISME DE LIBERATION :                    0
+     TAILLE MEMOIRE CUMULEE RECUPEREE  :                    0  Mo.
+     VOLUME DES LECTURES               :                    0  Mo.
+     VOLUME DES ECRITURES              :                    0  Mo.
+  
+   MEMOIRE JEVEUX MINIMALE REQUISE POUR L'EXECUTION :     197.29 Mo
+     - IMPOSE DE NOMBREUX ACCES DISQUE
+     - RALENTIT LA VITESSE D'EXECUTION
+   MEMOIRE JEVEUX OPTIMALE REQUISE POUR L'EXECUTION :     208.39 Mo
+     - LIMITE LES ACCES DISQUE
+     - AMELIORE LA VITESSE D'EXECUTION
+   MAXIMUM DE MEMOIRE UTILISEE PAR LE PROCESSUS     :     889.71 Mo
+     - COMPREND LA MEMOIRE CONSOMMEE PAR  JEVEUX, 
+       LE SUPERVISEUR PYTHON, LES LIBRAIRIES EXTERNES
+  
+ <I>       FIN D'EXECUTION LE : LU-14-AVRI-2025 11:40:12
+Signature of pickled file   : 44548de189ace5c47dfed2849852ea74a975fafc3d064659126a2d4c7d441a1a
+Signature of info file      : c50c52cc4a07e7f42ef4b18895cc61791e402eb6ff6c7639485d5f1284ef423a
+Signature of Jeveux database: aba88fc24cb30de5cc204072f43587e11956b8f6a89b5b7c88afa9b7a0484e3b
+
+ ********************************************************************************
+ * COMMAND                  :       USER :     SYSTEM :   USER+SYS :    ELAPSED *
+ ********************************************************************************
+ * DEBUT                    :       0.39 :       0.70 :       1.09 :       0.27 *
+ * LIRE_MAILLAGE            :       0.04 :       0.01 :       0.05 :       0.06 *
+ * AFFE_MODELE              :       0.00 :       0.00 :       0.00 :       0.00 *
+ * AFFE_CARA_ELEM           :       0.01 :       0.00 :       0.01 :       0.01 *
+ * DEFI_MATERIAU            :       0.01 :       0.00 :       0.01 :       0.00 *
+ * AFFE_MATERIAU            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * DEFI_LIST_REEL           :       0.00 :       0.00 :       0.00 :       0.01 *
+ * AFFE_CHAR_MECA           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * AFFE_CHAR_MECA           :       0.00 :       0.00 :       0.00 :       0.00 *
+ * ASSEMBLAGE               :       0.03 :       0.00 :       0.03 :       0.04 *
+ * DYNA_VIBRA               :       0.17 :       0.04 :       0.21 :       0.20 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * RECU_FONCTION            :       0.01 :       0.00 :       0.01 :       0.00 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.01 :       0.00 :       0.01 :       0.00 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.01 :       0.00 :       0.01 :       0.00 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.01 :       0.00 :       0.01 :       0.01 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * RECU_FONCTION            :       0.01 :       0.00 :       0.01 :       0.00 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * RECU_FONCTION            :       0.00 :       0.00 :       0.00 :       0.00 *
+ * IMPR_FONCTION            :       0.04 :       0.01 :       0.05 :       0.04 *
+ * IMPR_FONCTION            :       0.00 :       0.00 :       0.00 :       0.01 *
+ * FIN                      :       0.08 :       0.09 :       0.17 :       0.21 *
+ *  . check syntax          :       0.08 :       0.00 :       0.08 :       0.10 *
+ *  . fortran               :       0.66 :       0.83 :       1.49 :       0.69 *
+ ********************************************************************************
+ * TOTAL_JOB                :       0.90 :       0.90 :       1.80 :       0.96 *
+ ********************************************************************************
+
+# Mémoire (Mo) :   889.71 /   686.09 /   208.39 /   197.29 (VmPeak / VmSize / Optimum / Minimum)
+# Fin commande #0065   user+syst:        0.08s (syst:        0.09s, elaps:        0.21s)
+# ----------------------------------------------------------------------------------------------
+
+EXECUTION_CODE_ASTER_EXIT_22426=0
+
+
+
+------------------------------------------------------------
+--- DIAGNOSTIC JOB : OK
+------------------------------------------------------------
+

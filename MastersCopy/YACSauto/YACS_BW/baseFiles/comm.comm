@@ -1,0 +1,243 @@
+
+DEBUT(LANG='FR')
+
+
+tsth = 1 / 31
+
+ttth = 1 / 11
+
+one21th = 1 / 21
+
+mesh1D = LIRE_MAILLAGE(identifier='3:1',
+                       UNITE=20)
+
+modelEB = AFFE_MODELE(identifier='4:1',
+                      AFFE=_F(GROUP_MA=('EBfullEdge', ),
+                              MODELISATION='POU_D_E',
+                              PHENOMENE='MECANIQUE'),
+                      MAILLAGE=mesh1D)
+
+elemproEB = AFFE_CARA_ELEM(identifier='5:1',
+                           MODELE=modelEB,
+                           POUTRE=_F(CARA=('HY', 'HZ'),
+                                     GROUP_MA=('EBfullEdge', ),
+                                     SECTION='RECTANGLE',
+                                     VALE=(0.05,0.01)))
+
+mater = DEFI_MATERIAU(identifier='6:1',
+                      ELAS=_F(AMOR_HYST=0.5,
+                              E=210000000000.0,
+                              NU=0.3,
+                              RHO=7850.0))
+
+fieldmatEB = AFFE_MATERIAU(identifier='7:1',
+                           AFFE=_F(MATER=(mater, ),
+                                   TOUT='OUI'),
+                           MAILLAGE=mesh1D,
+                           MODELE=modelEB)
+
+listFr = DEFI_LIST_REEL(identifier='8:1',
+                        VALE=(1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5,  6.0, 6.5,  7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0, 12, 15.0, 17, 20.0, 25.0, 30.0, 35.0, 40.0, 
+                        45.0, 50.0, 55.0, 60.0, 65.0, 70.0, 75.0, 80.0, 85.0,
+                        90.0, 95.0, 100.0))
+
+
+bcEB = AFFE_CHAR_MECA(identifier='9:1',
+                      DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'),
+                                  GROUP_NO=('EBedgeEnc', 'EBedgeFree')),
+                      MODELE=modelEB)
+
+load0 = AFFE_CHAR_MECA(identifier='10:1',
+                       FORCE_NODALE=_F(FZ=0.2,
+                                       GROUP_NO=('Exc45', )),
+                       MODELE=modelEB)
+
+ASSEMBLAGE(identifier='11:1',
+           CARA_ELEM=elemproEB,
+           CHAM_MATER=fieldmatEB,
+           CHARGE=(bcEB, ),
+           MATR_ASSE=(_F(MATRICE=CO('MEB'),
+                         OPTION='MASS_MECA'),
+                      _F(MATRICE=CO('KEB'),
+                         OPTION='RIGI_MECA'),
+                      _F(MATRICE=CO('KH'),
+                         OPTION='RIGI_MECA_HYST')),
+           MODELE=modelEB,
+           NUME_DDL=CO('nddl'),
+           VECT_ASSE=_F(CHARGE=(load0, ),
+                        OPTION='CHAR_MECA',
+                        VECTEUR=CO('FZEB')))
+
+resEB = DYNA_VIBRA(identifier='0:2',
+                   BASE_CALCUL='PHYS',
+                   CARA_ELEM=elemproEB,
+                   CHAM_MATER=fieldmatEB,
+                   EXCIT=_F(CHARGE=load0,
+                            COEF_MULT=5.0),
+                   LIST_FREQ=listFr,
+                   MATR_MASS=MEB,
+                   MATR_RIGI=KH,
+                   MODELE=modelEB,
+                   TYPE_CALCUL='HARM')
+
+resp__3 = RECU_FONCTION(identifier='0:3',
+                        GROUP_NO=('Group_1', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp__2 = RECU_FONCTION(identifier='1:3',
+                        GROUP_NO=('Group_2', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp__1 = RECU_FONCTION(identifier='2:3',
+                        GROUP_NO=('Group_3', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_0 = RECU_FONCTION(identifier='3:3',
+                       GROUP_NO=('Group_4', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_1 = RECU_FONCTION(identifier='4:3',
+                       GROUP_NO=('Group_5', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_2 = RECU_FONCTION(identifier='5:3',
+                       GROUP_NO=('Group_6', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_3 = RECU_FONCTION(identifier='6:3',
+                       GROUP_NO=('Group_7', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_4 = RECU_FONCTION(identifier='7:3',
+                       GROUP_NO=('Group_8', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_5 = RECU_FONCTION(identifier='8:3',
+                       GROUP_NO=('Group_9', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_6 = RECU_FONCTION(identifier='9:3',
+                       GROUP_NO=('Group_10', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_7 = RECU_FONCTION(identifier='10:3',
+                       GROUP_NO=('Group_11', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_8 = RECU_FONCTION(identifier='11:3',
+                       GROUP_NO=('Group_12', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_9 = RECU_FONCTION(identifier='12:3',
+                       GROUP_NO=('Group_13', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_10 = RECU_FONCTION(identifier='13:3',
+                        GROUP_NO=('Group_14', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_11 = RECU_FONCTION(identifier='14:3',
+                        GROUP_NO=('Group_15', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_12 = RECU_FONCTION(identifier='15:3',
+                        GROUP_NO=('Group_16', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_13 = RECU_FONCTION(identifier='16:3',
+                        GROUP_NO=('Group_17', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_14 = RECU_FONCTION(identifier='17:3',
+                        GROUP_NO=('Group_18', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_15 = RECU_FONCTION(identifier='18:3',
+                        GROUP_NO=('Group_19', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_16 = RECU_FONCTION(identifier='19:3',
+                        GROUP_NO=('Group_20', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_17 = RECU_FONCTION(identifier='20:3',
+                        GROUP_NO=('Group_21', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+IMPR_FONCTION(identifier='21:3',
+              COURBE=(_F(FONCTION=resp__3),
+                      _F(FONCTION=resp__2),
+                      _F(FONCTION=resp__1),
+                      _F(FONCTION=resp_0),
+                      _F(FONCTION=resp_1),
+                      _F(FONCTION=resp_2,
+                         LIST_PARA=listFr),
+                      _F(FONCTION=resp_3,
+                         LIST_PARA=listFr),
+                      _F(FONCTION=resp_4),
+                      _F(FONCTION=resp_5),
+                      _F(FONCTION=resp_6),
+                      _F(FONCTION=resp_7),
+                      _F(FONCTION=resp_8),
+                      _F(FONCTION=resp_9),
+                      _F(FONCTION=resp_10),
+                      _F(FONCTION=resp_11),
+                      _F(FONCTION=resp_12),
+                      _F(FONCTION=resp_13),
+                      _F(FONCTION=resp_14),
+                      _F(FONCTION=resp_15),
+                      _F(FONCTION=resp_16),
+                      _F(FONCTION=resp_17)),
+              SEPARATEUR='  ',
+              UNITE=9)
+
+IMPR_FONCTION(identifier='22:3',
+              COURBE=_F(FONCTION=resp_10,
+                        MARQUEUR=0,
+                        STYLE=1),
+              FORMAT='XMGRACE',
+              UNITE=29)
+
+FIN()

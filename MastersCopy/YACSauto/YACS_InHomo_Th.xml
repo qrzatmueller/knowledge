@@ -1,0 +1,1394 @@
+<?xml version='1.0' encoding='iso-8859-1' ?>
+<proc name="newSchema_2">
+   <type name="string" kind="string"/>
+   <struct name="Engines/dataref">
+      <member name="ref" type="string"/>
+   </struct>
+   <type name="bool" kind="bool"/>
+   <sequence name="boolvec" content="bool"/>
+   <type name="double" kind="double"/>
+   <sequence name="dblevec" content="double"/>
+   <objref name="file" id="file"/>
+   <type name="int" kind="int"/>
+   <sequence name="intvec" content="int"/>
+   <struct name="stringpair">
+      <member name="name" type="string"/>
+      <member name="value" type="string"/>
+   </struct>
+   <sequence name="propvec" content="stringpair"/>
+   <objref name="pyobj" id="python:obj:1.0"/>
+   <sequence name="seqboolvec" content="boolvec"/>
+   <sequence name="seqdblevec" content="dblevec"/>
+   <sequence name="seqdouble" content="double"/>
+   <sequence name="seqintvec" content="intvec"/>
+   <sequence name="seqpyobj" content="pyobj"/>
+   <sequence name="stringvec" content="string"/>
+   <sequence name="seqstringvec" content="stringvec"/>
+   <container name="DefaultContainer">
+      <property name="container_kind" value="Salome"/>
+      <property name="attached_on_cloning" value="0"/>
+      <property name="container_name" value="FactoryServer"/>
+      <property name="name" value="localhost"/>
+   </container>
+   <forloop name="LoopOverSimTypes">
+      <bloc name="Bloc1">
+         <inline name="PassParameters">
+            <script><code><![CDATA[indexOut = index
+paramOut = ParamList[index]
+caseOut = casesIn[index]
+eta_Ei = eta_E[index]
+]]></code></script>
+            <inport name="casesIn" type="intvec"/>
+            <inport name="index" type="int"/>
+            <inport name="eta_E" type="seqdblevec"/>
+            <inport name="ParamList" type="seqdblevec"/>
+            <outport name="caseOut" type="int"/>
+            <outport name="indexOut" type="int"/>
+            <outport name="eta_Ei" type="dblevec"/>
+            <outport name="paramOut" type="dblevec"/>
+         </inline>
+         <switch name="Switch1" select="0">
+            <case id="0">
+               <bloc name="RunConstEta">
+                  <inline name="ModCommFIle">
+                     <script><code><![CDATA[import os, sys
+eta = eta_E[0]
+E = eta_E[1]
+commFilePath = basePath + "YACS_BW/baseFiles/comm.comm"
+commString = """
+DEBUT(LANG='FR')
+
+
+tsth = 1 / 31
+
+ttth = 1 / 11
+
+one21th = 1 / 21
+
+mesh1D = LIRE_MAILLAGE(identifier='3:1',
+                       UNITE=20)
+
+modelEB = AFFE_MODELE(identifier='4:1',
+                      AFFE=_F(GROUP_MA=('EBfullEdge', ),
+                              MODELISATION='POU_D_E',
+                              PHENOMENE='MECANIQUE'),
+                      MAILLAGE=mesh1D)
+
+elemproEB = AFFE_CARA_ELEM(identifier='5:1',
+                           MODELE=modelEB,
+                           POUTRE=_F(CARA=('HY', 'HZ'),
+                                     GROUP_MA=('EBfullEdge', ),
+                                     SECTION='RECTANGLE',
+                                     VALE=(0.05, 0.001)))
+
+mater = DEFI_MATERIAU(identifier='6:1',
+                      ELAS=_F(AMOR_HYST="""+str(eta)+''',
+                              E='''+str(E)+""",
+                              NU=0.3,
+                              RHO=7850.0))
+
+fieldmatEB = AFFE_MATERIAU(identifier='7:1',
+                           AFFE=_F(MATER=(mater, ),
+                                   TOUT='OUI'),
+                           MAILLAGE=mesh1D,
+                           MODELE=modelEB)
+
+listFr = DEFI_LIST_REEL(identifier='8:1',
+                        VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))
+
+bcEB = AFFE_CHAR_MECA(identifier='9:1',
+                      DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'),
+                                  GROUP_NO=('EBedgeEnc', 'EBedgeFree')),
+                      MODELE=modelEB)
+
+load0 = AFFE_CHAR_MECA(identifier='10:1',
+                       FORCE_NODALE=_F(FZ=0.2,
+                                       GROUP_NO=('Exc45', )),
+                       MODELE=modelEB)
+
+ASSEMBLAGE(identifier='11:1',
+           CARA_ELEM=elemproEB,
+           CHAM_MATER=fieldmatEB,
+           CHARGE=(bcEB, ),
+           MATR_ASSE=(_F(MATRICE=CO('MEB'),
+                         OPTION='MASS_MECA'),
+                      _F(MATRICE=CO('KEB'),
+                         OPTION='RIGI_MECA'),
+                      _F(MATRICE=CO('KH'),
+                         OPTION='RIGI_MECA_HYST')),
+           MODELE=modelEB,
+           NUME_DDL=CO('nddl'),
+           VECT_ASSE=_F(CHARGE=(load0, ),
+                        OPTION='CHAR_MECA',
+                        VECTEUR=CO('FZEB')))
+
+resEB = DYNA_VIBRA(identifier='0:2',
+                   BASE_CALCUL='PHYS',
+                   CARA_ELEM=elemproEB,
+                   CHAM_MATER=fieldmatEB,
+                   EXCIT=_F(CHARGE=load0,
+                            COEF_MULT=1.0),
+                   LIST_FREQ=listFr,
+                   MATR_MASS=MEB,
+                   MATR_RIGI=KH,
+                   MODELE=modelEB,
+                   TYPE_CALCUL='HARM')
+
+resp__3 = RECU_FONCTION(identifier='0:3',
+                        GROUP_NO=('Group_1', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp__2 = RECU_FONCTION(identifier='1:3',
+                        GROUP_NO=('Group_2', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp__1 = RECU_FONCTION(identifier='2:3',
+                        GROUP_NO=('Group_3', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_0 = RECU_FONCTION(identifier='3:3',
+                       GROUP_NO=('Group_4', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_1 = RECU_FONCTION(identifier='4:3',
+                       GROUP_NO=('Group_5', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_2 = RECU_FONCTION(identifier='5:3',
+                       GROUP_NO=('Group_6', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_3 = RECU_FONCTION(identifier='6:3',
+                       GROUP_NO=('Group_7', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_4 = RECU_FONCTION(identifier='7:3',
+                       GROUP_NO=('Group_8', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_5 = RECU_FONCTION(identifier='8:3',
+                       GROUP_NO=('Group_9', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_6 = RECU_FONCTION(identifier='9:3',
+                       GROUP_NO=('Group_10', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_7 = RECU_FONCTION(identifier='10:3',
+                       GROUP_NO=('Group_11', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_8 = RECU_FONCTION(identifier='11:3',
+                       GROUP_NO=('Group_12', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_9 = RECU_FONCTION(identifier='12:3',
+                       GROUP_NO=('Group_13', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_10 = RECU_FONCTION(identifier='13:3',
+                        GROUP_NO=('Group_14', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_11 = RECU_FONCTION(identifier='14:3',
+                        GROUP_NO=('Group_15', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_12 = RECU_FONCTION(identifier='15:3',
+                        GROUP_NO=('Group_16', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_13 = RECU_FONCTION(identifier='16:3',
+                        GROUP_NO=('Group_17', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_14 = RECU_FONCTION(identifier='17:3',
+                        GROUP_NO=('Group_18', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_15 = RECU_FONCTION(identifier='18:3',
+                        GROUP_NO=('Group_19', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_16 = RECU_FONCTION(identifier='19:3',
+                        GROUP_NO=('Group_20', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_17 = RECU_FONCTION(identifier='20:3',
+                        GROUP_NO=('Group_21', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+IMPR_FONCTION(identifier='21:3',
+              COURBE=(_F(FONCTION=resp__3),
+                      _F(FONCTION=resp__2),
+                      _F(FONCTION=resp__1),
+                      _F(FONCTION=resp_0),
+                      _F(FONCTION=resp_1),
+                      _F(FONCTION=resp_2,
+                         LIST_PARA=listFr),
+                      _F(FONCTION=resp_3,
+                         LIST_PARA=listFr),
+                      _F(FONCTION=resp_4),
+                      _F(FONCTION=resp_5),
+                      _F(FONCTION=resp_6),
+                      _F(FONCTION=resp_7),
+                      _F(FONCTION=resp_8),
+                      _F(FONCTION=resp_9),
+                      _F(FONCTION=resp_10),
+                      _F(FONCTION=resp_11),
+                      _F(FONCTION=resp_12),
+                      _F(FONCTION=resp_13),
+                      _F(FONCTION=resp_14),
+                      _F(FONCTION=resp_15),
+                      _F(FONCTION=resp_16),
+                      _F(FONCTION=resp_17)),
+              SEPARATEUR='  ',
+              UNITE=9)
+
+IMPR_FONCTION(identifier='22:3',
+              COURBE=_F(FONCTION=resp_10,
+                        MARQUEUR=0,
+                        STYLE=1),
+              FORMAT='XMGRACE',
+              UNITE=29)
+
+FIN()
+"""
+
+commFile = open(commFilePath,'w')
+commFile.write(commString)
+commFile.close()
+basePathOut =basePath
+]]></code></script>
+                     <inport name="basePath" type="string"/>
+                     <inport name="eta_E" type="dblevec"/>
+                     <outport name="basePathOut" type="string"/>
+                  </inline>
+                  <inline name="RunAsterScript">
+                     <script><code><![CDATA[import sys
+import os
+path = "/opt/salome_meca/"
+path2 = "/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_stable-1650/bin"
+if os.path.exists(path2):
+        print("Exists")
+        items = os.listdir(path2)
+        for item in items: 
+            print(item)
+else:
+        print("does not exist")
+        
+print(sys.version)
+print(sys.executable)
+import os, subprocess, sys
+export = basePath +"YACS_BW/baseFiles/export"
+appliPath = os.path.realpath("/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_stable-1650/bin")
+proc = subprocess.Popen([os.path.join(appliPath, 'run_aster')]+[export], close_fds =True)
+out, err = proc.communicate()
+
+]]></code></script>
+                     <inport name="basePath" type="string"/>
+                  </inline>
+                  <inline name="ExportFIleEdit">
+                     <script><code><![CDATA[import os, sys
+exportFilePath = basePath+"YACS_BW/baseFiles/export"
+resPath = basePath+"YACS_BW/autoRes/res"+str(index)+".txt"
+meshPath = basePath+"YACS_BW/baseFiles/meshFile.med"
+print(resPath)
+exportString = """
+P actions make_etude
+P debug nodebug
+P memjob 2097152
+P memory_limit 2048.0
+P mode interactif
+P mpi_nbcpu 1
+P mpi_nbnoeud 1
+P ncpus 1
+P nomjob RunCase_72_Stage_3
+P origine AsterStudy 0.11
+P server localhost
+P studyid 7360-0012-daMachine
+P time_limit 900.0
+P tpsjob 16
+P version 16.5
+A memjeveux 256.0
+A tpmax 900.0
+F comm comm.comm D  1
+F libr """+meshPath+''' D  20
+F libr '''+resPath+""" R  9
+F libr randpoint.agr R  29
+F mess message R  6
+"""
+
+exportFile = open(exportFilePath,'w')
+exportFile.write(exportString)
+exportFile.close()
+]]></code></script>
+                     <inport name="index" type="int"/>
+                     <inport name="basePath" type="string"/>
+                     <outport name="resPath" type="string"/>
+                  </inline>
+                  <control> <fromnode>ModCommFIle</fromnode> <tonode>ExportFIleEdit</tonode> </control>
+                  <control> <fromnode>ExportFIleEdit</fromnode> <tonode>RunAsterScript</tonode> </control>
+                  <datalink control="false">
+                     <fromnode>ModCommFIle</fromnode> <fromport>basePathOut</fromport>
+                     <tonode>ExportFIleEdit</tonode> <toport>basePath</toport>
+                  </datalink>
+                  <datalink control="false">
+                     <fromnode>ModCommFIle</fromnode> <fromport>basePathOut</fromport>
+                     <tonode>RunAsterScript</tonode> <toport>basePath</toport>
+                  </datalink>
+               </bloc>
+            </case>
+            <case id="1">
+               <bloc name="RunSinEta">
+                  <inline name="ModCommFIle2">
+                     <script><code><![CDATA[import os, sys, math
+A = A_k[0]
+k = math.pi*2* A_k [1]
+eta = eta_E[0]
+E = eta_E[1]
+commFilePath = basePath+"CodeAsterModels/OLF/EBYACS_Files/RunCase_6/Result-Stage_3/RunCase_1_Stage_3.comm"
+commString = """
+DEBUT(LANG='FR')
+
+
+# coeficient for sinus function
+A = """+str(A)+'''
+
+# nominal eta
+etaa = '''+str(eta)+"""
+
+# nominal E 
+E = """+str(E)+'''
+
+# wavenumber for sinus function
+k ='''+str(k)+"""
+
+mesh = LIRE_MAILLAGE(identifier='4:1',
+                     UNITE=20)
+
+model = AFFE_MODELE(identifier='5:1',
+                    AFFE=_F(MODELISATION='POU_D_E',
+                            PHENOMENE='MECANIQUE',
+                            TOUT='OUI'),
+                    MAILLAGE=mesh)
+
+elemprop = AFFE_CARA_ELEM(identifier='6:1',
+                          MODELE=model,
+                          POUTRE=_F(CARA=('HY', 'HZ'),
+                                    GROUP_MA=('EBfullEdge', ),
+                                    SECTION='RECTANGLE',
+                                    VALE=(0.03, 0.001)))
+
+materConst = DEFI_MATERIAU(identifier='7:1',
+                           ELAS=_F(AMOR_HYST=0.8,
+                                   E=210000000000.0,
+                                   NU=0.3,
+                                   RHO=7850.0))
+
+listr = DEFI_LIST_REEL(identifier='8:1',
+                       DEBUT=30.0,
+                       INTERVALLE=_F(JUSQU_A=3000.0,
+                                     PAS=9.0))
+
+funcE2 = DEFI_CONSTANTE(identifier='9:1',
+                        VALE=E,
+                        )
+
+funcRho2 = DEFI_CONSTANTE(identifier='10:1',
+                          VALE=7850.0)
+
+funcNu2 = DEFI_CONSTANTE(identifier='11:1',
+                         VALE=0.3)
+
+formSin = FORMULE(identifier='12:1',
+                  NOM_PARA=('X', ),
+                  VALE='etaa+(A*sin(k*X))',
+                  A=A,
+                  k=k,
+                  etaa=etaa)
+
+mater = DEFI_MATERIAU(identifier='13:1',
+                      ELAS_FO=_F(AMOR_HYST=formSin,
+                                 E=funcE2,
+                                 NU=funcNu2,
+                                 RHO=funcRho2))
+
+fieldmat = AFFE_MATERIAU(identifier='14:1',
+                         AFFE=_F(MATER=(mater, ),
+                                 TOUT='OUI'),
+                         MAILLAGE=mesh,
+                         MODELE=model)
+
+load = AFFE_CHAR_MECA(identifier='15:1',
+                      DDL_IMPO=_F(DRX=0.0,
+                                  DRZ=0.0,
+                                  DX=0.0,
+                                  DY=0.0,
+                                  GROUP_NO=('EBEdgeEnc', )),
+                      MODELE=model)
+
+baseEx = AFFE_CHAR_MECA(identifier='16:1',
+                        DDL_IMPO=_F(DZ=1.0,
+                                    GROUP_NO=('EBEdgeEnc', )),
+                        MODELE=model)
+
+ASSEMBLAGE(identifier='0:2',
+           CARA_ELEM=elemprop,
+           CHAM_MATER=fieldmat,
+           CHARGE=(load, baseEx),
+           MATR_ASSE=(_F(MATRICE=CO('M'),
+                         OPTION='MASS_MECA'),
+                      _F(MATRICE=CO('K'),
+                         OPTION='RIGI_MECA'),
+                      _F(MATRICE=CO('KH'),
+                         OPTION='RIGI_MECA_HYST')),
+           MODELE=model,
+           NUME_DDL=CO('nddl'))
+
+resharm = DYNA_VIBRA(identifier='4:2',
+                     BASE_CALCUL='PHYS',
+                     CARA_ELEM=elemprop,
+                     CHAM_MATER=fieldmat,
+                     EXCIT=_F(CHARGE=baseEx,
+                              COEF_MULT=0.0001),
+                     LIST_FREQ=listr,
+                     MATR_MASS=M,
+                     MATR_RIGI=KH,
+                     MODELE=model,
+                     TYPE_CALCUL='HARM')
+
+fend = RECU_FONCTION(identifier='0:3',
+                     GROUP_NO=('EBEdgeFree', ),
+                     NOM_CHAM='VITE',
+                     NOM_CMP='DZ',
+                     RESULTAT=resharm)
+
+func1 = RECU_FONCTION(identifier='1:3',
+                      GROUP_NO=('Group_1', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func2 = RECU_FONCTION(identifier='2:3',
+                      GROUP_NO=('Group_2', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func3 = RECU_FONCTION(identifier='3:3',
+                      GROUP_NO=('Group_3', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func4 = RECU_FONCTION(identifier='4:3',
+                      GROUP_NO=('Group_4', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func5 = RECU_FONCTION(identifier='5:3',
+                      GROUP_NO=('Group_5', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func6 = RECU_FONCTION(identifier='6:3',
+                      GROUP_NO=('Group_6', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func7 = RECU_FONCTION(identifier='7:3',
+                      GROUP_NO=('Group_7', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func8 = RECU_FONCTION(identifier='8:3',
+                      GROUP_NO=('Group_8', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func9 = RECU_FONCTION(identifier='9:3',
+                      GROUP_NO=('Group_9', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DZ',
+                      RESULTAT=resharm)
+
+func10 = RECU_FONCTION(identifier='10:3',
+                       GROUP_NO=('Group_10', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func11 = RECU_FONCTION(identifier='11:3',
+                       GROUP_NO=('Group_11', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func12 = RECU_FONCTION(identifier='12:3',
+                       GROUP_NO=('Group_12', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func13 = RECU_FONCTION(identifier='13:3',
+                       GROUP_NO=('Group_13', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func14 = RECU_FONCTION(identifier='14:3',
+                       GROUP_NO=('Group_14', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func15 = RECU_FONCTION(identifier='15:3',
+                       GROUP_NO=('Group_15', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func16 = RECU_FONCTION(identifier='16:3',
+                       GROUP_NO=('Group_16', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func17 = RECU_FONCTION(identifier='17:3',
+                       GROUP_NO=('Group_17', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func18 = RECU_FONCTION(identifier='18:3',
+                       GROUP_NO=('Group_18', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func19 = RECU_FONCTION(identifier='19:3',
+                       GROUP_NO=('Group_19', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func20 = RECU_FONCTION(identifier='20:3',
+                       GROUP_NO=('Group_20', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func21 = RECU_FONCTION(identifier='21:3',
+                       GROUP_NO=('Group_21', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func22 = RECU_FONCTION(identifier='22:3',
+                       GROUP_NO=('Group_22', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func23 = RECU_FONCTION(identifier='23:3',
+                       GROUP_NO=('Group_23', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+func24 = RECU_FONCTION(identifier='24:3',
+                       GROUP_NO=('Group_24', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resharm)
+
+IMPR_FONCTION(identifier='25:3',
+              COURBE=(_F(FONCTION=func1),
+                      _F(FONCTION=func2),
+                      _F(FONCTION=func3),
+                      _F(FONCTION=func4),
+                      _F(FONCTION=func5),
+                      _F(FONCTION=func6),
+                      _F(FONCTION=func7),
+                      _F(FONCTION=func8),
+                      _F(FONCTION=func9),
+                      _F(FONCTION=func10),
+                      _F(FONCTION=func11),
+                      _F(FONCTION=func12),
+                      _F(FONCTION=func13),
+                      _F(FONCTION=func14),
+                      _F(FONCTION=func15),
+                      _F(FONCTION=func16),
+                      _F(FONCTION=func17),
+                      _F(FONCTION=func18),
+                      _F(FONCTION=func19),
+                      _F(FONCTION=func20),
+                      _F(FONCTION=func21),
+                      _F(FONCTION=func22),
+                      _F(FONCTION=func23),
+                      _F(FONCTION=func24)),
+              FORMAT='TABLEAU',
+              UNITE=4)
+
+fend2 = RECU_FONCTION(identifier='26:3',
+                      GROUP_NO=('EBEdgeFree', ),
+                      NOM_CHAM='VITE',
+                      NOM_CMP='DY',
+                      RESULTAT=resharm)
+
+IMPR_FONCTION(identifier='27:3',
+              COURBE=(_F(FONCTION=fend,
+                         MARQUEUR=0,
+                         STYLE=1),
+                      _F(FONCTION=fend2)),
+              FORMAT='TABLEAU',
+              UNITE=8)
+
+IMPR_FONCTION(identifier='28:3',
+              COURBE=(_F(FONCTION=func12),
+                      _F(FONCTION=func24)),
+              UNITE=2)
+
+FIN()
+"""
+
+commFile = open(commFilePath,'w')
+commFile.write(commString)
+commFile.close()
+basePathOut = basePath
+]]></code></script>
+                     <inport name="basePath" type="string"/>
+                     <inport name="A_k" type="dblevec"/>
+                     <inport name="eta_E" type="dblevec"/>
+                     <outport name="basePathOut" type="string"/>
+                  </inline>
+                  <inline name="RunAsterScript">
+                     <script><code><![CDATA[import sys
+import os
+path = "/opt/salome_meca/"
+path2 = "/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_stable-1650/bin"
+if os.path.exists(path2):
+        print("Exists")
+        items = os.listdir(path2)
+        for item in items: 
+            print(item)
+else:
+        print("does not exist")
+        
+print(sys.version)
+print(sys.executable)
+import os, subprocess, sys
+export = basePath+"CodeAsterModels/OLF/EBYACS_Files/RunCase_6/Result-Stage_3/export"
+appliPath = os.path.realpath("/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_stable-1650/bin")
+proc = subprocess.Popen([os.path.join(appliPath, 'run_aster')]+[export], close_fds =True)
+out, err = proc.communicate()
+
+]]></code></script>
+                     <inport name="basePath" type="string"/>
+                  </inline>
+                  <inline name="ExportFIleEdit2">
+                     <script><code><![CDATA[import os, sys
+exportFilePath = basePath +"CodeAsterModels/OLF/EBYACS_Files/RunCase_6/Result-Stage_3/export"
+resPath = basePath+"CodeAsterModels/OLF/autoRes/res"+str(index)+".txt"
+exportString = """
+P actions make_etude
+P debug nodebug
+P memjob 2097152
+P memory_limit 2048.0
+P mode interactif
+P mpi_nbcpu 1
+P mpi_nbnoeud 1
+P ncpus 1
+P nomjob RunCase_6_Stage_3
+P origine AsterStudy 0.11
+P server localhost
+P studyid 7330-0001-daMachine
+P time_limit 900.0
+P tpsjob 16
+P version 16.5
+A memjeveux 256.0
+A tpmax 900.0
+F comm """+basePath+'''CodeAsterModels/OLF/EBYACS_Files/RunCase_6/Result-Stage_3/RunCase_1_Stage_3.comm D  1
+F libr '''+basePath+"""CodeAsterModels/OLF/EBYACS_Files/RunCase_1/Result-Stage_1/_ExportedFromSalomeObject_0_1_2_3.med D  20
+F libr """+resPath+''' R  4
+F libr contr.txt R  8
+F libr onepoint.txt R  2
+F mess message R  6
+'''
+
+commFile = open(exportFilePath,'w')
+commFile.write(exportString)
+commFile.close()
+]]></code></script>
+                     <inport name="index" type="int"/>
+                     <inport name="basePath" type="string"/>
+                     <outport name="resPath" type="string"/>
+                  </inline>
+                  <control> <fromnode>ModCommFIle2</fromnode> <tonode>ExportFIleEdit2</tonode> </control>
+                  <control> <fromnode>ExportFIleEdit2</fromnode> <tonode>RunAsterScript</tonode> </control>
+                  <datalink control="false">
+                     <fromnode>ModCommFIle2</fromnode> <fromport>basePathOut</fromport>
+                     <tonode>RunAsterScript</tonode> <toport>basePath</toport>
+                  </datalink>
+                  <datalink control="false">
+                     <fromnode>ModCommFIle2</fromnode> <fromport>basePathOut</fromport>
+                     <tonode>ExportFIleEdit2</tonode> <toport>basePath</toport>
+                  </datalink>
+               </bloc>
+            </case>
+            <case id="2">
+               <bloc name="RunThicknessSteps">
+                  <inline name="ModCommFIle">
+                     <script><code><![CDATA[import os, sys
+eta = eta_E[0]
+E = eta_E[1]
+th = th_O[0]  #thickness and other that I havent decided yet
+commFilePath = basePath + "YACS_BW_TH/baseFiles/comm.comm"
+inHomo = inHomoType
+commString = """
+DEBUT(LANG='FR')
+
+
+tsth = 1 / 31
+
+ttth = 1 / 11
+
+one21th = 1 / 21
+
+mesh1D = LIRE_MAILLAGE(identifier='3:1',
+                       UNITE=20)
+
+modelEB = AFFE_MODELE(identifier='4:1',
+                      AFFE=_F(GROUP_MA=('EBfullEdge', 'InHomo'),
+                              MODELISATION='POU_D_E',
+                              PHENOMENE='MECANIQUE'),
+                      MAILLAGE=mesh1D)
+
+elemproEB = AFFE_CARA_ELEM(identifier='5:1',
+                           MODELE=modelEB,
+                           POUTRE=(_F(CARA=('HY', 'HZ'),
+                                      GROUP_MA=('EBfullEdge', ),
+                                      SECTION='RECTANGLE',
+                                      VALE=(0.05, 0.001)),
+                                   _F(CARA=('HY', 'HZ'),
+                                      GROUP_MA=("""+inHomo+''', ),
+                                      SECTION='RECTANGLE',
+                                      VALE=(0.05, '''+str(th)+"""))))
+
+mater = DEFI_MATERIAU(identifier='6:1',
+                      ELAS=_F(AMOR_HYST= """ +str(eta)+''',
+                              E='''+str(E)+""",
+                              NU=0.3,
+                              RHO=7850.0))
+
+fieldmatEB = AFFE_MATERIAU(identifier='7:1',
+                           AFFE=_F(MATER=(mater, ),
+                                   TOUT='OUI'),
+                           MAILLAGE=mesh1D,
+                           MODELE=modelEB)
+
+listFr = DEFI_LIST_REEL(identifier='8:1',
+                        VALE=(35.4, 35.6, 35.9, 36.1, 36.4, 36.6, 36.9, 37.2, 37.4, 37.7, 38.0, 38.3, 38.5, 38.8, 39.1, 39.4, 39.7, 40.0, 40.2, 40.5, 40.8, 41.1, 41.4, 41.7, 42.0, 42.3, 42.6, 42.9, 43.2, 43.6, 43.9, 44.2, 44.5, 44.8, 45.2, 45.5, 45.8, 46.1, 46.5, 46.8, 47.1, 47.5, 47.8, 48.2, 48.5, 48.9, 49.2, 49.6, 49.9, 50.3, 50.7, 51.0, 51.4, 51.8, 52.1, 52.5, 52.9, 53.3, 53.7, 54.1, 54.4, 54.8, 55.2, 55.6, 56.0, 56.4, 56.8, 57.3, 57.7, 58.1, 58.5, 58.9, 59.4, 59.8, 60.2, 60.6, 61.1, 61.5, 62.0, 62.4, 62.9, 63.3, 63.8, 64.2, 64.7, 65.2, 65.6, 66.1, 66.6, 67.1, 67.6, 68.0, 68.5, 69.0, 69.5, 70.0, 70.5, 71.0, 71.6, 72.1, 72.6, 73.1, 73.7, 74.2, 74.7, 75.3, 75.8, 76.4, 76.9, 77.5, 78.0, 78.6, 79.1, 79.7, 80.3, 80.9, 81.5, 82.0, 82.6, 83.2, 83.8, 84.4, 85.1, 85.7, 86.3, 86.9, 87.5, 88.2, 88.8, 89.4, 90.1, 90.7, 91.4, 92.1, 92.7, 93.4, 94.1, 94.7, 95.4, 96.1, 96.8, 97.5, 98.2, 98.9, 99.6, 100.4, 101.1, 101.8, 102.6, 103.3, 104.0, 104.8, 105.5, 106.3, 107.1, 107.8, 108.6, 109.4, 110.2, 111.0, 111.8, 112.6, 113.4, 114.2, 115.1, 115.9, 116.7, 117.6, 118.4, 119.3, 120.1, 121.0, 121.9, 122.8, 123.6, 124.5, 125.4, 126.3, 127.3, 128.2, 129.1, 130.0, 131.0, 131.9, 132.9, 133.8, 134.8, 135.8, 136.8, 137.7, 138.7, 139.7, 140.7, 141.8, 142.8, 143.8, 144.9, 145.9, 147.0, 148.0, 149.1, 150.2, 151.2, 152.3, 153.4, 154.5, 155.7, 156.8, 157.9, 159.1, 160.2, 161.4, 162.5, 163.7, 164.9, 166.1, 167.3, 168.5, 169.7, 170.9, 172.2, 173.4, 174.7, 175.9, 177.2, 178.5, 179.8, 181.1, 182.4, 183.7, 185.0, 186.3, 187.7, 189.0, 190.4, 191.8, 193.2, 194.6, 196.0, 197.4, 198.8, 200.2, 201.7, 203.1, 204.6, 206.1, 207.6, 209.1, 210.6, 212.1, 213.6, 215.2, 216.7, 218.3, 219.9, 221.5, 223.1, 224.7, 226.3, 227.9, 229.6, 231.2, 232.9, 234.6, 236.3, 238.0, 239.7, 241.4, 243.2, 244.9, 246.7, 248.5, 250.3, 252.1, 253.9, 255.7, 257.6, 259.5, 261.3, 263.2, 265.1, 267.0, 269.0, 270.9, 272.9, 274.8, 276.8, 278.8, 280.8, 282.9, 284.9, 287.0, 289.0, 291.1, 293.2, 295.3, 297.5, 299.6, 301.8, 304.0, 306.2, 308.4, 310.6, 312.8, 315.1, 317.4, 319.7, 322.0, 324.3, 326.6, 329.0, 331.4, 333.8, 336.2, 338.6, 341.0, 343.5, 346.0, 348.5, 351.0, 353.5, 356.1, 358.7, 361.3, 363.9, 366.5, 369.1, 371.8, 374.5, 377.2, 379.9, 382.7, 385.4, 388.2, 391.0, 393.8, 396.7, 399.5, 402.4, 405.3, 408.3, 411.2, 414.2, 417.2, 420.2, 423.2, 426.3, 429.4, 432.5, 435.6, 438.7, 441.9, 445.1, 448.3, 451.5, 454.8, 458.1, 461.4, 464.7, 468.1, 471.5, 474.9, 478.3, 481.7, 485.2, 488.7, 492.3, 495.8, 499.4, 503.0, 506.6, 510.3, 514.0, 517.7, 521.4, 525.2, 529.0, 532.8, 536.6, 540.5, 544.4, 548.4, 552.3, 556.3, 560.3, 564.4, 568.4, 572.5, 576.7, 580.8, 585.0, 589.3, 593.5, 597.8, 602.1, 606.5, 610.9, 615.3, 619.7, 624.2, 628.7, 633.2, 637.8, 642.4, 647.0, 651.7, 656.4, 661.2, 665.9, 670.8, 675.6, 680.5, 685.4, 690.3, 695.3, 700.3, 705.4, 710.5, 715.6, 720.8, 726.0, 731.2, 736.5, 741.8, 747.2, 752.6, 758.0, 763.5, 769.0, 774.6, 780.2, 785.8, 791.5, 797.2, 802.9, 808.7, 814.6, 820.5, 826.4, 832.4, 838.4, 844.4, 850.5, 856.7, 862.9, 869.1, 875.4, 881.7, 888.1, 894.5, 900.9, 907.4, 914.0, 920.6, 927.2, 933.9, 940.7, 947.5, 954.3, 961.2, 968.1, 975.1, 982.2, 989.3, 996.4, 1003.6, 1010.9, 1018.2, 1025.5, 1032.9, 1040.4, 1047.9, 1055.4, 1063.1, 1070.7, 1078.5, 1086.3, 1094.1, 1102.0, 1110.0, 1118.0, 1126.1, 1134.2, 1142.4, 1150.6, 1158.9, 1167.3, 1175.7, 1184.2, 1192.8, 1201.4, 1210.1, 1218.8, 1227.6, 1236.5, 1245.4, 1254.4, 1263.5, 1272.6, 1281.8, 1291.0, 1300.4, 1309.7, 1319.2, 1328.7, 1338.3, 1348.0, 1357.7, 1367.5, 1377.4, 1387.4, 1397.4, 1407.5, 1417.6, 1427.9, 1438.2, 1448.6, 1459.0, 1469.6, 1480.2, 1490.9, 1501.6, 1512.5, 1523.4, 1534.4, 1545.5, 1556.6, 1567.9, 1579.2, 1590.6, 1602.1, 1613.7, 1625.3, 1637.1, 1648.9, 1660.8, 1672.8, 1684.9, 1697.0, 1709.3, 1721.6, 1734.1, 1746.6, 1759.2, 1771.9, 1784.7, 1797.6, 1810.6, 1823.6, 1836.8, 1850.1, 1863.4, 1876.9, 1890.4, 1904.1, 1917.8, 1931.7, 1945.6, 1959.7, 1973.8, 1988.1, 2002.5, 2016.9, 2031.5, 2046.2, 2060.9, 2075.8, 2090.8, 2105.9, 2121.1, 2136.4, 2151.9, 2167.4, 2183.0, 2198.8, 2214.7, 2230.7))
+
+bcEB = AFFE_CHAR_MECA(identifier='9:1',
+                      DDL_IMPO=_F(BLOCAGE=('DEPLACEMENT', 'ROTATION'),
+                                  GROUP_NO=('EBedgeEnc')),
+                      MODELE=modelEB)
+
+load0 = AFFE_CHAR_MECA(identifier='10:1',
+                       FORCE_NODALE=_F(FZ=0.2,
+                                       GROUP_NO=('Exc45', )),
+                       MODELE=modelEB)
+
+ASSEMBLAGE(identifier='11:1',
+           CARA_ELEM=elemproEB,
+           CHAM_MATER=fieldmatEB,
+           CHARGE=(bcEB, ),
+           MATR_ASSE=(_F(MATRICE=CO('MEB'),
+                         OPTION='MASS_MECA'),
+                      _F(MATRICE=CO('KEB'),
+                         OPTION='RIGI_MECA'),
+                      _F(MATRICE=CO('KH'),
+                         OPTION='RIGI_MECA_HYST')),
+           MODELE=modelEB,
+           NUME_DDL=CO('nddl'),
+           VECT_ASSE=_F(CHARGE=(load0, ),
+                        OPTION='CHAR_MECA',
+                        VECTEUR=CO('FZEB')))
+
+resEB = DYNA_VIBRA(identifier='0:2',
+                   BASE_CALCUL='PHYS',
+                   CARA_ELEM=elemproEB,
+                   CHAM_MATER=fieldmatEB,
+                   EXCIT=_F(CHARGE=load0,
+                            COEF_MULT=1.0),
+                   LIST_FREQ=listFr,
+                   MATR_MASS=MEB,
+                   MATR_RIGI=KH,
+                   MODELE=modelEB,
+                   TYPE_CALCUL='HARM')
+
+resTable = POST_RELEVE_T(identifier='0:3',
+                         ACTION=_F(FORMAT_C='REEL',
+                                   GROUP_NO=('EBfullEdge', ),
+                                   INTITULE='ViteDZreel',
+                                   NOM_CHAM='VITE',
+                                   NOM_CMP=('DZ', ),
+                                   OPERATION=('EXTRACTION', ),
+                                   RESULTAT=resEB))
+
+node_table = POST_RELEVE_T(identifier='1:3',
+                           ACTION=_F(GROUP_NO=('AllNodesOrd2', 'EBedgeFree'),
+                                     INTITULE='sh',
+                                     NOM_CHAM='VITE',
+                                     NOM_CMP=('DZ', ),
+                                     NUME_ORDRE=(1, ),
+                                     OPERATION=('EXTRACTION', ),
+                                     RESULTAT=resEB))
+resp__3 = RECU_FONCTION(identifier='2:3',
+                        GROUP_NO=('Group_1', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp__2 = RECU_FONCTION(identifier='3:3',
+                        GROUP_NO=('Group_2', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp__1 = RECU_FONCTION(identifier='4:3',
+                        GROUP_NO=('Group_3', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_0 = RECU_FONCTION(identifier='5:3',
+                       GROUP_NO=('Group_4', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_1 = RECU_FONCTION(identifier='6:3',
+                       GROUP_NO=('Group_5', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_2 = RECU_FONCTION(identifier='7:3',
+                       GROUP_NO=('Group_6', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_3 = RECU_FONCTION(identifier='8:3',
+                       GROUP_NO=('Group_7', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_4 = RECU_FONCTION(identifier='9:3',
+                       GROUP_NO=('Group_8', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_5 = RECU_FONCTION(identifier='10:3',
+                       GROUP_NO=('Group_9', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_6 = RECU_FONCTION(identifier='11:3',
+                       GROUP_NO=('Group_10', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_7 = RECU_FONCTION(identifier='12:3',
+                       GROUP_NO=('Group_11', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_8 = RECU_FONCTION(identifier='13:3',
+                       GROUP_NO=('Group_12', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_9 = RECU_FONCTION(identifier='14:3',
+                       GROUP_NO=('Group_13', ),
+                       NOM_CHAM='VITE',
+                       NOM_CMP='DZ',
+                       RESULTAT=resEB)
+
+resp_10 = RECU_FONCTION(identifier='15:3',
+                        GROUP_NO=('Group_14', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_11 = RECU_FONCTION(identifier='16:3',
+                        GROUP_NO=('Group_15', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_12 = RECU_FONCTION(identifier='17:3',
+                        GROUP_NO=('Group_16', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_13 = RECU_FONCTION(identifier='18:3',
+                        GROUP_NO=('Group_17', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_14 = RECU_FONCTION(identifier='19:3',
+                        GROUP_NO=('Group_18', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_15 = RECU_FONCTION(identifier='20:3',
+                        GROUP_NO=('Group_19', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_16 = RECU_FONCTION(identifier='21:3',
+                        GROUP_NO=('Group_20', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+resp_17 = RECU_FONCTION(identifier='22:3',
+                        GROUP_NO=('Group_21', ),
+                        NOM_CHAM='VITE',
+                        NOM_CMP='DZ',
+                        RESULTAT=resEB)
+
+IMPR_FONCTION(identifier='23:3',
+              COURBE=(_F(FONCTION=resp__3),
+                      _F(FONCTION=resp__2),
+                      _F(FONCTION=resp__1),
+                      _F(FONCTION=resp_0),
+                      _F(FONCTION=resp_1),
+                      _F(FONCTION=resp_2,
+                         LIST_PARA=listFr),
+                      _F(FONCTION=resp_3,
+                         LIST_PARA=listFr),
+                      _F(FONCTION=resp_4),
+                      _F(FONCTION=resp_5),
+                      _F(FONCTION=resp_6),
+                      _F(FONCTION=resp_7),
+                      _F(FONCTION=resp_8),
+                      _F(FONCTION=resp_9),
+                      _F(FONCTION=resp_10),
+                      _F(FONCTION=resp_11),
+                      _F(FONCTION=resp_12),
+                      _F(FONCTION=resp_13),
+                      _F(FONCTION=resp_14),
+                      _F(FONCTION=resp_15),
+                      _F(FONCTION=resp_16),
+                      _F(FONCTION=resp_17)),
+              SEPARATEUR='  ',
+              UNITE=8)
+
+IMPR_FONCTION(identifier='24:3',
+              COURBE=_F(FONCTION=resp_10,
+                        MARQUEUR=0,
+                        STYLE=1),
+              FORMAT='XMGRACE',
+              UNITE=2)
+              
+column_values = node_table.get_column("NOEUD")
+print(column_values)  # Will print the values of the "NOEUD" column
+
+func_list = []
+for node in column_values:  # Loop over extracted nodes
+    func_list.append(
+        RECU_FONCTION(
+            NOEUD=(node,),
+            NOM_CHAM='VITE',
+            NOM_CMP='DZ',
+            RESULTAT=resEB
+        )
+    )
+IMPR_FONCTION(
+    COURBE=[_F(FONCTION=func) for func in func_list],  # Using the manually defined list
+    UNITE=3
+)
+
+FIN()
+"""
+
+commFile = open(commFilePath,'w')
+commFile.write(commString)
+commFile.close()
+basePathOut =basePath
+]]></code></script>
+                     <load container="DefaultContainer"/>
+                     <inport name="basePath" type="string"/>
+                     <inport name="eta_E" type="dblevec"/>
+                     <inport name="th_O" type="dblevec"/>
+                     <inport name="inHomoType" type="string"/>
+                     <outport name="basePathOut" type="string"/>
+                  </inline>
+                  <inline name="RunAsterScript">
+                     <script><code><![CDATA[import sys
+import os
+path = "/opt/salome_meca/"
+path2 = "/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_stable-1650/bin"
+if os.path.exists(path2):
+        print("Exists")
+        items = os.listdir(path2)
+        for item in items: 
+            print(item)
+else:
+        print("does not exist")
+        
+print(sys.version)
+print(sys.executable)
+import os, subprocess, sys
+export = basePath +"YACS_BW_TH/baseFiles/export"
+appliPath = os.path.realpath("/opt/salome_meca/2023.1.0_scibian_univ/tools/Code_aster_stable-1650/bin")
+proc = subprocess.Popen([os.path.join(appliPath, 'run_aster')]+[export], close_fds =True)
+out, err = proc.communicate()
+
+]]></code></script>
+                     <load container="DefaultContainer"/>
+                     <inport name="basePath" type="string"/>
+                  </inline>
+                  <inline name="ExportFIleEdit">
+                     <script><code><![CDATA[import os, sys
+exportFilePath = basePath+"YACS_BW_TH/baseFiles/export"
+resPath = basePath+"YACS_BW_TH/autoRes/InHvsThck/resInHsmall_"+str(index)+".txt"
+resPathF = basePath +"YACS_BW_TH/autoRes/InHvsThck/resInHsmall_F"+str(index)+".txt"
+meshPath = basePath+"YACS_BW_TH/baseFiles/meshFile3.med"
+messagePath = basePath+"YACS_BW_TH/autoRes/InHvsThck/messageInHsmall_"+str(index)+".txt"
+print(resPath)
+exportString = """
+P actions make_etude
+P debug nodebug
+P memjob 2097152
+P memory_limit 2048.0
+P mode interactif
+P mpi_nbcpu 1
+P mpi_nbnoeud 1
+P ncpus 1
+P nomjob Aname
+P origine AsterStudy 0.11
+P server localhost
+P studyid 7360-0012-daMachine
+P time_limit 900.0
+P tpsjob 16
+P version 16.5
+A memjeveux 256.0
+A tpmax 900.0
+F comm comm.comm D  1
+F libr """+meshPath+''' D  20
+F libr '''+resPath+""" R  8
+F libr randpoint.agr R  2
+F libr """+resPathF+''' R 3
+F mess '''+messagePath+""" R  6
+"""
+
+exportFile = open(exportFilePath,'w')
+exportFile.write(exportString)
+exportFile.close()
+]]></code></script>
+                     <inport name="index" type="int"/>
+                     <inport name="basePath" type="string"/>
+                     <outport name="resPath" type="string"/>
+                  </inline>
+                  <control> <fromnode>ModCommFIle</fromnode> <tonode>ExportFIleEdit</tonode> </control>
+                  <control> <fromnode>ExportFIleEdit</fromnode> <tonode>RunAsterScript</tonode> </control>
+                  <datalink control="false">
+                     <fromnode>ModCommFIle</fromnode> <fromport>basePathOut</fromport>
+                     <tonode>RunAsterScript</tonode> <toport>basePath</toport>
+                  </datalink>
+                  <datalink control="false">
+                     <fromnode>ModCommFIle</fromnode> <fromport>basePathOut</fromport>
+                     <tonode>ExportFIleEdit</tonode> <toport>basePath</toport>
+                  </datalink>
+               </bloc>
+            </case>
+         </switch>
+         <datanode name="PathRepository">
+            <parameter name="Home" type="string">
+               <value><string>/home/cr8or/Documents/MasterThesis/mt_eq/</string></value>
+            </parameter>
+            <parameter name="MBBM" type="string">
+               <value><string>/home/pqrz/Documents/MasterThesis/mt_eq/</string></value>
+            </parameter>
+         </datanode>
+         <inline name="postprocessing">
+            <script><code><![CDATA[#import subprocess
+#import sys
+
+#script_path = "/home/pqrz/Documents/MasterThesis/mt_eq/Python/PythonCd/BW_aster_yacs.py"
+#conda_python_path = "/home/pqrz/miniconda3/envs/thesis/bin/python"
+#try:
+#    result = subprocess.run([conda_python_path, script_path, resPath],check = True, text = True, #capture_output=True)
+ #   print("scriptoutput", result.stdout)
+#except subprocess.CalledProcessError as e:
+#    print("Error Ocurred:",e.stderr)
+#    sys.exit(1)
+
+]]></code></script>
+            <inport name="resPath" type="string"/>
+         </inline>
+         <datanode name="PathRepository0">
+            <parameter name="Home" type="string">
+               <value><string>/home/cr8or/Documents/MasterThesis/mt_eq/CodeAsterModels/YACSauto/</string></value>
+            </parameter>
+            <parameter name="MBBM" type="string">
+               <value><string>/home/pqrz/Documents/MasterThesis/mt_eq/CodeAsterModels/YACSauto/</string></value>
+            </parameter>
+         </datanode>
+         <control> <fromnode>PassParameters</fromnode> <tonode>Switch1</tonode> </control>
+         <control> <fromnode>Switch1</fromnode> <tonode>postprocessing</tonode> </control>
+         <control> <fromnode>PathRepository</fromnode> <tonode>Switch1</tonode> </control>
+         <control> <fromnode>PathRepository0</fromnode> <tonode>Switch1</tonode> </control>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>caseOut</fromport>
+            <tonode>Switch1</tonode> <toport>select</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>indexOut</fromport>
+            <tonode>Switch1.p1_RunSinEta.ExportFIleEdit2</tonode> <toport>index</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>indexOut</fromport>
+            <tonode>Switch1.p2_RunThicknessSteps.ExportFIleEdit</tonode> <toport>index</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>indexOut</fromport>
+            <tonode>Switch1.p0_RunConstEta.ExportFIleEdit</tonode> <toport>index</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>eta_Ei</fromport>
+            <tonode>Switch1.p1_RunSinEta.ModCommFIle2</tonode> <toport>eta_E</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>eta_Ei</fromport>
+            <tonode>Switch1.p0_RunConstEta.ModCommFIle</tonode> <toport>eta_E</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>eta_Ei</fromport>
+            <tonode>Switch1.p2_RunThicknessSteps.ModCommFIle</tonode> <toport>eta_E</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>paramOut</fromport>
+            <tonode>Switch1.p2_RunThicknessSteps.ModCommFIle</tonode> <toport>th_O</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PassParameters</fromnode> <fromport>paramOut</fromport>
+            <tonode>Switch1.p1_RunSinEta.ModCommFIle2</tonode> <toport>A_k</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PathRepository</fromnode> <fromport>MBBM</fromport>
+            <tonode>Switch1.p1_RunSinEta.ModCommFIle2</tonode> <toport>basePath</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PathRepository0</fromnode> <fromport>MBBM</fromport>
+            <tonode>Switch1.p0_RunConstEta.ModCommFIle</tonode> <toport>basePath</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>PathRepository0</fromnode> <fromport>MBBM</fromport>
+            <tonode>Switch1.p2_RunThicknessSteps.ModCommFIle</tonode> <toport>basePath</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>Switch1.p0_RunConstEta.ExportFIleEdit</fromnode> <fromport>resPath</fromport>
+            <tonode>postprocessing</tonode> <toport>resPath</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>Switch1.p1_RunSinEta.ExportFIleEdit2</fromnode> <fromport>resPath</fromport>
+            <tonode>postprocessing</tonode> <toport>resPath</toport>
+         </datalink>
+         <datalink control="false">
+            <fromnode>Switch1.p2_RunThicknessSteps.ExportFIleEdit</fromnode> <fromport>resPath</fromport>
+            <tonode>postprocessing</tonode> <toport>resPath</toport>
+         </datalink>
+      </bloc>
+   </forloop>
+   <datanode name="DataIn100">
+      <parameter name="steps" type="int">
+         <value><int>3</int></value>
+      </parameter>
+      <parameter name="Cases" type="intvec">
+         <value><array><data>
+<value><int>2</int></value>
+<value><int>2</int></value>
+<value><int>2</int></value>
+<value><int>2</int></value>
+<value><int>2</int></value>
+<value><int>2</int></value>
+</data></array></value>
+      </parameter>
+      <parameter name="eta_E" type="seqdblevec">
+         <value><array><data>
+<value><array><data>
+<value><double>0.1</double></value>
+<value><double>210000000000</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.1</double></value>
+<value><double>210000000000</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.1</double></value>
+<value><double>210000000000</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.4</double></value>
+<value><double>210000000000</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.4</double></value>
+<value><double>210000000000</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.4</double></value>
+<value><double>210000000000</double></value>
+</data></array></value>
+</data></array></value>
+      </parameter>
+      <parameter name="paramVecList" type="seqdblevec">
+         <value><array><data>
+<value><array><data>
+<value><double>0.0005</double></value>
+<value><double>10</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.00075</double></value>
+<value><double>10</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.001</double></value>
+<value><double>10</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.0008</double></value>
+<value><double>10</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.0009</double></value>
+<value><double>10</double></value>
+</data></array></value>
+<value><array><data>
+<value><double>0.001</double></value>
+<value><double>10</double></value>
+</data></array></value>
+</data></array></value>
+      </parameter>
+      <parameter name="inHomoType" type="string">
+         <value><string>'InHomo'</string></value>
+      </parameter>
+      <parameter name="inHomoType2" type="string">
+         <value><string>'InHomoSmall'</string></value>
+      </parameter>
+   </datanode>
+   <control> <fromnode>DataIn100</fromnode> <tonode>LoopOverSimTypes</tonode> </control>
+   <datalink control="false">
+      <fromnode>LoopOverSimTypes</fromnode> <fromport>index</fromport>
+      <tonode>LoopOverSimTypes.Bloc1.PassParameters</tonode> <toport>index</toport>
+   </datalink>
+   <datalink control="false">
+      <fromnode>DataIn100</fromnode> <fromport>steps</fromport>
+      <tonode>LoopOverSimTypes</tonode> <toport>nsteps</toport>
+   </datalink>
+   <datalink control="false">
+      <fromnode>DataIn100</fromnode> <fromport>Cases</fromport>
+      <tonode>LoopOverSimTypes.Bloc1.PassParameters</tonode> <toport>casesIn</toport>
+   </datalink>
+   <datalink control="false">
+      <fromnode>DataIn100</fromnode> <fromport>eta_E</fromport>
+      <tonode>LoopOverSimTypes.Bloc1.PassParameters</tonode> <toport>eta_E</toport>
+   </datalink>
+   <datalink control="false">
+      <fromnode>DataIn100</fromnode> <fromport>paramVecList</fromport>
+      <tonode>LoopOverSimTypes.Bloc1.PassParameters</tonode> <toport>ParamList</toport>
+   </datalink>
+   <datalink control="false">
+      <fromnode>DataIn100</fromnode> <fromport>inHomoType2</fromport>
+      <tonode>LoopOverSimTypes.Bloc1.Switch1.p2_RunThicknessSteps.ModCommFIle</tonode> <toport>inHomoType</toport>
+   </datalink>
+   <parameter>
+      <tonode>LoopOverSimTypes.Bloc1.Switch1</tonode><toport>select</toport>
+      <value><int>0</int></value>
+   </parameter>
+   <presentation name="LoopOverSimTypes.Bloc1.PathRepository0" x="4" y="814.943" width="158" height="90" expanded="1" expx="4" expy="814.943" expWidth="158" expHeight="90" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p0_RunConstEta.RunAsterScript" x="141.418" y="167.867" width="158" height="63" expanded="1" expx="141.418" expy="167.867" expWidth="158" expHeight="63" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p2_RunThicknessSteps.ModCommFIle" x="4.12852" y="35.6487" width="158" height="144" expanded="1" expx="4.12852" expy="35.6487" expWidth="158" expHeight="144" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p2_RunThicknessSteps" x="76.626" y="631.82" width="377.888" height="231.69" expanded="1" expx="76.626" expy="631.82" expWidth="377.888" expHeight="231.69" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.PassParameters" x="45.9087" y="224.199" width="158" height="144" expanded="1" expx="45.9087" expy="224.199" expWidth="158" expHeight="144" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p2_RunThicknessSteps.ExportFIleEdit" x="208.793" y="43.533" width="158" height="90" expanded="1" expx="208.793" expy="43.533" expWidth="158" expHeight="90" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p0_RunConstEta.ExportFIleEdit" x="243.416" y="50.8075" width="158" height="90" expanded="1" expx="243.416" expy="50.8075" expWidth="158" expHeight="90" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p2_RunThicknessSteps.RunAsterScript" x="215.888" y="164.69" width="158" height="63" expanded="1" expx="215.888" expy="164.69" expWidth="158" expHeight="63" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p0_RunConstEta.ModCommFIle" x="6" y="34" width="158" height="90" expanded="1" expx="6" expy="34" expWidth="158" expHeight="90" shownState="0"/>
+   <presentation name="LoopOverSimTypes" x="173.299" y="34.8167" width="1351.63" height="1070.05" expanded="1" expx="173.299" expy="34.8167" expWidth="1351.63" expHeight="1070.05" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p1_RunSinEta.ExportFIleEdit2" x="197.252" y="40.7355" width="158" height="90" expanded="1" expx="197.252" expy="40.7355" expWidth="158" expHeight="90" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.PathRepository" x="30.4645" y="523.641" width="158" height="90" expanded="1" expx="30.4645" expy="523.641" expWidth="158" expHeight="90" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1" x="469.06" y="133.541" width="558.503" height="867.51" expanded="1" expx="469.06" expy="133.541" expWidth="558.503" expHeight="867.51" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.postprocessing" x="1179.63" y="333.004" width="158" height="63" expanded="1" expx="1179.63" expy="333.004" expWidth="158" expHeight="63" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p1_RunSinEta.RunAsterScript" x="205.495" y="165.19" width="158" height="63" expanded="1" expx="205.495" expy="165.19" expWidth="158" expHeight="63" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p1_RunSinEta.ModCommFIle2" x="6" y="34" width="158" height="117" expanded="1" expx="6" expy="34" expWidth="158" expHeight="117" shownState="0"/>
+   <presentation name="DataIn100" x="4" y="165.139" width="158" height="198" expanded="1" expx="4" expy="165.139" expWidth="158" expHeight="198" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p0_RunConstEta" x="93.3822" y="70.541" width="405.416" height="234.867" expanded="1" expx="93.3822" expy="70.541" expWidth="405.416" expHeight="234.867" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1" x="6" y="61" width="1341.63" height="1005.05" expanded="1" expx="6" expy="61" expWidth="1341.63" expHeight="1005.05" shownState="0"/>
+   <presentation name="LoopOverSimTypes.Bloc1.Switch1.p1_RunSinEta" x="187.008" y="391.962" width="367.495" height="232.19" expanded="1" expx="187.008" expy="391.962" expWidth="367.495" expHeight="232.19" shownState="0"/>
+   <presentation name="__ROOT__" x="0" y="0" width="1528.93" height="1108.87" expanded="1" expx="0" expy="0" expWidth="1528.93" expHeight="1108.87" shownState="0"/>
+</proc>

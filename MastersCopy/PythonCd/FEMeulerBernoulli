@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Dec  4 16:31:14 2024
+
+@author: prqrz
+""" 
+import numpy as np
+import matplotlib.pyplot as plt
+import fabricateWaves as fW
+import SolutionSurface as SS
+
+frequencies, responses = SS.openFEMresults("EBres0p300.txt")
+num= 350
+freq = frequencies[num]
+meas = responses[num,:]
+print("freq = ", freq)
+
+#Define X position vector
+start = 0.170
+step = 0.020
+x_size = 13
+stop = start + (x_size * step)
+Xpos = np.arange(start,stop,step)
+
+# plt.figure()
+# plt.plot(Xpos, np.real(meas), marker='o')  # Add marker for clarity if desired
+# plt.xlabel('X-axis Label')
+# plt.ylabel('Y-axis Label')
+# plt.title("real FEM")
+# plt.show()
+
+# plt.figure()
+# plt.plot(Xpos, np.imag(meas), marker='o')  # Add marker for clarity if desired
+# plt.xlabel('X-axis Label')
+# plt.ylabel('Y-axis Label')
+# plt.title("imag FEM")
+# plt.show()
+
+# min_cb, min_eta, coefs = SS.exploreSpace(meas, freq, 0.001,0.05, 7850, (5,150), (0.0,1.5), 500,500, Xpos, "plot")
+
+freqlist = np.arange(300,320)
+results = np.zeros((freqlist.size, 3))
+
+for i, freqindex in enumerate(freqlist):
+    meas = responses[freqindex,:]
+    freq = frequencies[freqindex]
+    min_cb, min_eta, coefs = SS.exploreSpace(meas, freq, 0.001,0.05, 7850, (20,150), (0.2,0.4), 500,300, Xpos, "")
+    results[i,0] = freq
+    results[i,1] = min_cb
+    results[i,2] = min_eta
+
+print(results)
+
+# freq = 50
+#VMs = fW.fabricateVibration(eta=0.68122, cb=69.23847, freq=freq, Vp=coefs[0], Vpj=coefs[1], Vm=coefs[2], Vmj=coefs[3], plot="Identified from Meas")
+# def fabricateVibration(eta=0.001, cb=65, freq=500, Vp=1, Vm=0, Vpj=0, Vmj=0, plot=""):
+#VMs = VMs.flatten()
+#min_cb, min_eta, coefs2 = SS.exploreSpace(VMs, freq, 0.001, (50,90), (0.6,0.81), 500,500, "Re-Identified Error Space")

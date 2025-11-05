@@ -1,0 +1,35 @@
+In this folder I am trying to run simulations with an inhomogenity in the
+thickness. I implemented this by adding a plane in the middle of the beam
+in the geometry module, then creating a Inhomo element group in the mesh module
+by using a filter with the conditions belong to plane with tolerance of...
+(define length of inhomogenity with 2xTolerance).
+Finally in codeaster another affecaraelem is added for the new element group
+assigning after the general characteristics, this particular characteristics
+that apply only to this group. Define a smaller or greater thickness.
+
+Key for resultfiles resInHomo_lengthInhomoInmm_ThicknessAtInhomo
+resInHomo_20_0p5_.txt (0.5mm thick during 20 mm)
+did not work, it is not being properly assigned
+try 2: In a single command of affe_cara_elem, assign different properties to
+the two groups. the everything group and the inhomo group
+
+The second approach did work. Now how do we know if it makes sense???
+just from the files lets compare the four corners. Low frequency First Point,
+Low Frequency Last Point, High Frequency First Point, High Frequency Last points
+            Frequency      ReP0          ImP0          ReP20         ImP20
+NoHomo      3.54000E+01   4.74284E-03   1.03439E-03   1.82688E-06  -5.59253E-05
+InHomo      3.54000E+01   4.39169E-03   1.28932E-03   7.01739E-06  -4.77864E-05
+
+NoHomo      2.23070E+03  -1.07624E-03  -1.81721E-03   -4.72864E-07   6.40775E-07
+InHomo      2.23070E+03  -1.07522E-03  -1.81741E-03    6.87951E-08   6.64971E-07
+
+In general, high frequency points before (positionally) the inhomogenity are not
+greatly affected.
+After the inhomogenity, we see a big effect on the real part, but not the
+imaginary part.
+In general, in low frequenies, the effect is quite clear, even before the
+inhomogenity. after the inhomogenity we see more effect on real part than on
+the imaginary part.
+
+What would this translate into if we start looking at youngs modulus and
+loss factor? What about for k' and k''
