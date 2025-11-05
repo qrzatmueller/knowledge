@@ -4,123 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "62f34205993fb446",
+        "id": "cca6fc09cbbc1f5d",
         "type": "tabs",
         "children": [
           {
-            "id": "57ae70a411251f14",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Deutschstyl/Schreiben Fehler.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Schreiben Fehler"
-            }
-          },
-          {
-            "id": "833a7e46b8c9c3bf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Schallschutz Berechnung.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Schallschutz Berechnung"
-            }
-          },
-          {
-            "id": "1e069b3f64a7235f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Außenlärm Berechnung.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Außenlärm Berechnung"
-            }
-          },
-          {
-            "id": "4b1f6d56c5a2ea70",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Normen/DIN_18560-2 (Schwimmestriche).md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "DIN_18560-2 (Schwimmestriche)"
-            }
-          },
-          {
-            "id": "0fced59c1809f5e9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Materialien/Massivholzelemente.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Massivholzelemente"
-            }
-          },
-          {
-            "id": "46f3a6a27ac07359",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Materialien/Massivholzelemente.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Massivholzelemente"
-            }
-          },
-          {
-            "id": "95a6acd753ca4564",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bericht shcreiben/Konzept Bericht.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Konzept Bericht"
-            }
-          },
-          {
-            "id": "c6bbb2df393b4efb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Deutschstyl/Vokab.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Vokab"
-            }
-          },
-          {
-            "id": "0f5a046ad4c75d71",
+            "id": "0a606ceaf5f0d886",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -132,163 +20,8 @@
               "icon": "lucide-file",
               "title": "Berichte Schreibweise"
             }
-          },
-          {
-            "id": "52c6d943f80bc39c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bericht shcreiben/Konzept Bericht.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Konzept Bericht"
-            }
-          },
-          {
-            "id": "cf6a909d15f56eae",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bericht shcreiben/Nachweis.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Nachweis"
-            }
-          },
-          {
-            "id": "585d42619b0a6be6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bericht shcreiben/Nachweis.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Nachweis"
-            }
-          },
-          {
-            "id": "1875f6cd92ecb71d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bericht shcreiben/Konzept Bericht.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Konzept Bericht"
-            }
-          },
-          {
-            "id": "488c55e0e602ab2d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bericht shcreiben/Nachweis.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Nachweis"
-            }
-          },
-          {
-            "id": "ffdcd94f4e164fd3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bericht shcreiben/Übliche Sätze.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Übliche Sätze"
-            }
-          },
-          {
-            "id": "2d57f09328e7c848",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Deutschstyl/Vokab.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Vokab"
-            }
-          },
-          {
-            "id": "a3c556f960d254bf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Knauf Brochure/Bauakustik Grundlagen.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Bauakustik Grundlagen"
-            }
-          },
-          {
-            "id": "ec96b3c5ac944632",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Knauf Brochure/02 Anforderungen an die Bauteile.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "02 Anforderungen an die Bauteile"
-            }
-          },
-          {
-            "id": "51e3302fba2d55aa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Ermittlung.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Ermittlung"
-            }
-          },
-          {
-            "id": "b93ee8be8678a7b2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Deutschstyl/Passiv.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Passiv"
-            }
           }
-        ],
-        "currentTab": 18
+        ]
       }
     ],
     "direction": "vertical"
@@ -427,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -435,35 +169,35 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ce2d4df95171d615",
+  "active": "0a606ceaf5f0d886",
   "lastOpenFiles": [
-    "Knauf Brochure/02 Anforderungen an die Bauteile.md",
-    "Ermittlung.md",
-    "Knauf Brochure/Bauakustik Grundlagen.md",
-    "Knauf Brochure",
-    "Deutschstyl/CGPT Gespräche.md",
-    "Deutschstyl/Vokab.md",
-    "Deutschstyl/Übliche Satzkonstruktionen.md",
-    "Deutschstyl/Schreiben Fehler.md",
     "Deutschstyl/Passiv.md",
+    "Knauf Brochure/Bauakustik Grundlagen.md",
+    "Deutschstyl/Vokab.md",
     "Bericht shcreiben/Übliche Sätze.md",
-    "Bericht shcreiben/Konzept Bericht.md",
     "Bericht shcreiben/Nachweis.md",
-    "Bericht shcreiben/Korrekturen.md",
-    "Bericht shcreiben/Wohnungstrennwände.md",
-    "Bauteilen/Bauteilkonstruktionen.md",
-    "Welcome.md",
-    "Knauf Brochure/Schallschutz Berechnung.md",
-    "Intro to this vault.md",
-    "Außenlärm Berechnung.md",
+    "Bericht shcreiben/Konzept Bericht.md",
+    "Deutschstyl/Berichte Schreibweise.md",
     "Materialien/Massivholzelemente.md",
+    "Normen/DIN_18560-2 (Schwimmestriche).md",
+    "Außenlärm Berechnung.md",
+    "Deutschstyl/Schreiben Fehler.md",
+    "Knauf Brochure/02 Anforderungen an die Bauteile.md",
+    "Knauf Brochure/Schallschutz Berechnung.md",
+    "Deutschstyl/CGPT Gespräche.md",
+    "Deutschstyl/Übliche Satzkonstruktionen.md",
+    "Bericht shcreiben/Wohnungstrennwände.md",
+    "Bericht shcreiben/Korrekturen.md",
+    "Bauteilen/Bauteilkonstruktionen.md",
+    "Ermittlung.md",
+    "Knauf Brochure",
+    "Welcome.md",
+    "Intro to this vault.md",
     "Materialien/Holzständerkonstruktion.md",
     "Normen/Fabian Schoepfer.md",
     "Bericht shcreiben",
-    "Deutschstyl/Berichte Schreibweise.md",
     "Bauteilen",
     "Materialien",
-    "Normen/DIN_18560-2 (Schwimmestriche).md",
     "Normen",
     "Deutschstyl"
   ]
