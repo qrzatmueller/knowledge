@@ -79,6 +79,14 @@ def IdentifyEta_YACS(result_path, case, plot = "", remark = ""):
         stop = start + ((x_size-1) * step)
         Xpos = np.linspace(start, stop, x_size)
         beam = BW.EBBeam(b=0.05, E=100e9) # for initial guess use steel beam
+    if (case == "BWsplit"):
+        #Xpos for usual BW, I have not retested this
+        start = 0.070 #it used to be 0.17, but that is completely wrong, although no real effect.  
+        step = 0.020
+        x_size = 21
+        stop = start + ((x_size-1) * step)
+        Xpos = np.linspace(start, stop, x_size)
+        beam = BW.EBBeam(b=0.05, E=100e9) # for initial guess use steel beam
     if (case == "OLF"):    
         #Xpos for OLF, and guessing beam: 
         start = 0.170
@@ -94,7 +102,9 @@ def IdentifyEta_YACS(result_path, case, plot = "", remark = ""):
     cbs = np.zeros(frequencies.shape)
     k_s = np.zeros(frequencies.shape,dtype=complex)
     for i, freq in enumerate(frequencies):
-        meas = responses[i,:]
+        meas = responses[i,:] 
+        print("Xposshape", Xpos.shape)
+        print("meas shape", meas.shape)
         result = Optimize(freq, Xpos, meas, ObjectiveNormal)
         k_ = result.x[0]+1j*result.x[1]
         if (result.x[1]>0):
@@ -109,6 +119,106 @@ def IdentifyEta_YACS(result_path, case, plot = "", remark = ""):
     if (plot != ""):
         olf.save_scatter_plot(file_path,"BWIDn"+remark, frequencies, etas, plot)
     return etas, cbs, E_, k_s 
+def IdentifyEta_2Parts(result_path, case, plot = "", remark = ""):
+    """
+    Using the BW procedure to identify the loss factor, using an optimization technique and
+    no approximation of eta w.r.t. k' and k''. Used for the beam with the small inhomogeneity
+    where values are identified separately for the beam before and for the beam after the 
+    inhomo
+
+    Parameters:
+        result_path: file from simulation to get data from
+        case: either BW for bending wave method or OLF for olf
+        
+    Returns:
+        eta: value of vector of values of loss factor for each frequency
+        cb: value or vector of values of phase speed for each frequency
+        E: value or vector of values of Youngs modulus for each frequency. 
+    """
+    file_path = result_path
+    frequencies, responses = SS.openFEMresults(file_path)
+    if (case == "BW"):
+        #Xpos for usual BW, I have not retested this
+        start = 0.070 #it used to be 0.17, but that is completely wrong, although no real effect.  
+        step = 0.020
+        x_size = 21
+        stop = start + ((x_size-1) * step)
+        Xpos = np.linspace(start, stop, x_size)
+        beam = BW.EBBeam(b=0.05, E=100e9) # for initial guess use steel beam
+    if (case == "BWsplit"):
+        #Xpos for usual BW, I have not retested this
+        start = 0.070 #it used to be 0.17, but that is completely wrong, although no real effect.  
+        step = 0.020
+        x_size = 7
+        stop = start + ((x_size-1) * step)
+        Xpos = np.linspace(start, stop, x_size)
+        beam = BW.EBBeam(b=0.05, E=100e9) # for initial guess use steel beam
+
+        nInhomo = 1 #number of nodes in the inhomogeneity or in general nodes in the middle that should not be part of the first or second beam
+        start2 = stop + (nInhomo+1)*step
+        x_size2 = 13
+        stop2 = start2 +((x_size2-1)*step)
+        Xpos2 = np.linspace(start2, stop2, x_size2)
+        
+    etas = np.zeros(frequencies.shape)
+    print("etasshape", etas.shape)
+    print("freqshape",frequencies.shape)
+    cbs = np.zeros(frequencies.shape)
+    k_s = np.zeros(frequencies.shape,dtype=complex)
+    A_s = np.zeros((frequencies.size,4), dtype=complex)
+
+    etas2 = np.zeros_like(etas)
+    cbs2 = np.zeros_like(cbs)
+    k_s2 = np.zeros_like(k_s)
+    A_s2 = np.zeros_like(A_s)
+
+    
+    for i, freq in enumerate(frequencies):
+        meas = responses[i,0:x_size] #testing change here it was responses[i,:]
+        # print("Xposshape", Xpos.shape)
+        # print("meas shape", meas.shape)
+        result = Optimize(freq, Xpos, meas, ObjectiveNormal)
+        k_ = result.x[0]+1j*result.x[1]
+        if (result.x[1]>0):
+            print("imaginary part is positive at frequency "+str(freq)+ ", check formulation")
+        ehochk = compute_A(result.x, Xpos)
+        # Solve least squares for x
+        x, _, _, _ = np.linalg.lstsq(ehochk, meas, rcond=None)
+        # print("xshape", x.shape)
+        A_s[i] = x
+        omega = 2*np.pi*freq
+        E_ = beam.mu * omega*omega / beam.I /(pow(k_,4))
+        etas[i] = E_.imag / E_.real
+        etas[i] = -(k_**4).imag / (k_**4).real #there is something funny here that I had to add the minus sign, but the line above delivers same result but with positive sign...
+        k_s[i] = k_
+        cbs[i] = (pow(E_*beam.I*omega*omega/beam.mu,0.25)).real
+        cbs[i] = (omega/k_).real 
+    if (plot != ""):
+        olf.save_scatter_plot(file_path,"BWIDn1"+remark, frequencies, etas, plot)
+
+    for i, freq in enumerate(frequencies):
+        meas2 = responses[i,x_size+1::] #testing change here it was responses[i,:]
+        # print("Xposshape", Xpos2.shape)
+        # print("meas shape", meas2.shape)
+        result = Optimize(freq, Xpos2, meas2, ObjectiveNormal)
+        k_ = result.x[0]+1j*result.x[1]
+        if (result.x[1]>0):
+            print("imaginary part is positive at frequency "+str(freq)+ ", check formulation")
+        ehochk = compute_A(result.x, Xpos2)
+        # Solve least squares for x
+        x, _, _, _ = np.linalg.lstsq(ehochk, meas2, rcond=None)
+        # print("xshape", x.shape)
+        A_s2[i] = x
+        omega = 2*np.pi*freq
+        E_2= beam.mu * omega*omega / beam.I /(pow(k_,4))
+        etas2[i] = E_.imag / E_.real
+        etas2[i] = -(k_**4).imag / (k_**4).real #there is something funny here that I had to add the minus sign, but the line above delivers same result but with positive sign...
+        k_s2[i] = k_
+        cbs2[i] = (pow(E_*beam.I*omega*omega/beam.mu,0.25)).real
+        cbs2[i] = (omega/k_).real 
+    if (plot != ""):
+        olf.save_scatter_plot(file_path,"BWIDn2"+remark, frequencies, etas2, plot)
+    return etas, cbs, E_, k_s,A_s, etas2, cbs2, E_2, k_s2, A_s2
 def addNoise(signal, noise_coef, noise_type):
     if noise_type == "phase":
         signal_phase = np.angle(signal)
